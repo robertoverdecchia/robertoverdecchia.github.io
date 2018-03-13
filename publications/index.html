@@ -109,7 +109,7 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
 
 .abstract {
       padding: 10px 15px;
-      font-size: 86%;
+      font-size: 80%;
       font-style: italic;
       text-align: justify;
       text-justify: inter-word;
@@ -236,11 +236,16 @@ function toggleButton(key, button) {
 <ul class="biblist">
 
 <!-- Item: verdecchia2018techdebt -->
-<li ><p>
+<li>
 R. Verdecchia, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>Architectural Technical Debt Identification: The Research Landscape</b><br>
 <i>International Conference on Technical Debt (TechDebt)</i>,
 2018.<br>
 (Accepted for pubblication)<br>
+    [<a href="javascript:toggleButton('verdecchia2018techdebt','abstract')">Abstract</a>]<br>
+<div id="verdecchia2018techdebt-abstract" class="abstract" style="display: none;">Architectural Technical Debt (ATD) regards sub-optimal design decisions that bring short-term benefits to the cost of long-term gradual deterioration of the quality of the software architecture. The identication of ATD strongly influences the technical and economic sustainability of software systems and is attracting growing interest in the scientific community. During the years several approaches for ATD identification have been conceived. Each of them, however, addresses ATD from different perspectives and with heterogeneous characteristics.
+In this paper we present a systematic mapping study on ATD identification. Our goal is to identify, classify, and evaluate the state of the art on ATD identification from the following three perspectives: publication trends, characteristics, and potential for industrial adoption. Specifically, starting from a set of 509 potentially relevant studies, we systematically selected 47 primary studies and analyzed them according to a rigorously predefined classification framework.
+The analysis of the obtained results will support both researchers and practitioners by providing (i) an assessment of current research trends and gaps in ATD identification, (ii) a solid foundation for understanding existing (and future) research, and (iii) a rigorous evaluation of its potential for industrial adoption.
+</div></li><br>
 <!--
 <a href="javascript:toggleButton('verdecchia2018techdebt','abstract')">[Abstract]</a><br>
 <div id="verdecchia2018techdebt-abstract" class="abstract" style="display: none;">Architectural Technical Debt (ATD) regards sub-optimal design decisions that bring short-term benefits to the cost of long-term gradual deterioration of the quality of the software architecture. The identification of ATD strongly influences the technical and economic sustainability of software systems and is attracting growing interest in the scientific community. During the years several approaches for ATD identification have been conceived. Each of them, however, addresses ATD from different perspectives and with heterogeneous characteristics.
@@ -252,15 +257,15 @@ The analysis of the obtained results will support both researchers and practitio
 </li>
 
 <!-- Item: miranda2018FAST -->
-<li >
+<li>
 <a href="http://cin.ufpe.br/~bafm" target="_blank">B. Miranda</a>, <a href="https://ioemilio.github.io/" target="_blank">E. Cruciani</a>, R. Verdecchia, <a href="http://bertolino.isti.cnr.it/" target="_blank">A. Bertolino</a> <br><b>FAST Approaches to Scalable Similarity-based Test Case Prioritization
 </b><br>
 <i>International Conference on Software Engineering (ICSE)
 </i>,
 2018.
 <br />
-    [<a href="javascript:toggleButton('miranda2018fast','bibtex')">BibTeX</a>]
     [<a href="javascript:toggleButton('miranda2018fast','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('miranda2018fast','bibtex')">BibTeX</a>]
     <a href="https://robertoverdecchia.github.io/papers/ICSE_2018.pdf" target="_blank">[PDF]</a>
 <br>
 <div id="miranda2018fast-bibtex" class="bibtex noshow" style="display: none;">
@@ -274,18 +279,18 @@ The analysis of the obtained results will support both researchers and practitio
 }
 </pre>
 </div>
-<div id="miranda2018fast-abstract" class="abstract" style="display: none;">Many test case prioritization criteria have been proposed for speeding up fault detection. Among them, similaritybased approaches give priority to the test cases that are the most dissimilar from those already selected. However, the proposed criteria do not scale up to handle the many thousands or even some millions test suite sizes of modern industrial systems and simple heuristics are used instead. We introduce the FAST family of test case prioritization techniques that radically changes this landscape by borrowing algorithms commonly exploited in the big data domain to find similar items. FAST techniques provide scalable similarity-based test case prioritization in both white-box and black-box fashion. The results from experimentation on real world C and Java subjects show that the fastest members of the family outperform other black-box approaches in efficiency with no significant impact on effectiveness, and also outperform whitebox approaches, including greedy ones, if preparation time is not counted. A simulation study of scalability shows that one FAST technique can prioritize a million test cases in less than 20 minutes.</div></li><br>
+<div id="miranda2018fast-abstract" class="abstract" style="display: none;">Many test case prioritization criteria have been proposed for speeding up fault detection. Among them, similarity-based approaches give priority to the test cases that are the most dissimilar from those already selected. However, the proposed criteria do not scale up to handle the many thousands or even some millions test suite sizes of modern industrial systems and simple heuristics are used instead. We introduce the FAST family of test case prioritization techniques that radically changes this landscape by borrowing algorithms commonly exploited in the big data domain to find similar items. FAST techniques provide scalable similarity-based test case prioritization in both white-box and black-box fashion. The results from experimentation on real world C and Java subjects show that the fastest members of the family outperform other black-box approaches in efficiency with no significant impact on effectiveness, and also outperform whitebox approaches, including greedy ones, if preparation time is not counted. A simulation study of scalability shows that one FAST technique can prioritize a million test cases in less than 20 minutes.</div></li><br>
 </li>
 
 <!-- Item: verdecchia2018codeSmells -->
-    <li ><p>
+    <li >
     R. Verdecchia, R. A. Saez, <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a>, and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>Empirical Evaluation of the Energy Impact of Refactoring Code Smells</b><br>
 <i>International Conference on ICT for Sustainability (ICT4S)</i>,
 2018.
 <br />
-    <a href="javascript:toggleButton('verdecchia2018codeSmells','bibtex')">[BibTeX]</a>
+    [<a href="javascript:toggleButton('verdecchia2018codeSmells','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018codeSmells','bibtex')">BibTeX</a>]
     <a href="https://robertoverdecchia.github.io/papers/ICT4S_2018.pdf" target="_blank">[PDF]</a>
-</p>
 <div id="verdecchia2018codeSmells-bibtex" class="bibtex noshow" style="display: none;">
 <pre>
 @inbook{verdecchia2018codeSmells,
@@ -299,18 +304,20 @@ booktitle = "International Conference on ICT for Sustainability"
 }
 </pre>
 </div>
+<div id="verdecchia2018codeSmells-abstract" class="abstract" style="display: none;">Software energy efficiency has gained the increasing attention of the research community. How to improve it, however, still lacks evidence. Specifically, the impact of code smell refactoring on energy efficiency has been scarcely investigated. In the exploratory study here reported, we investigate the impact on performance and energy consumption of refactoring well-known code smells on Java software applications. In order to understand if software metrics can be used as indicators of the energy impact of refactoring, we also measured the variation caused by refactoring on a set of well-established software metrics. We conducted a controlled experiment using state-of-the-art power measurement equipment. Statistical hypothesis testing and effect size estimation were performed on the experimental results, which show that in one out of three applications, refactoring each smell significantly impacted power- and energy consumption. E.g., refactoring Feature Envy and Long Method smells led to a 49% energy efficiency improvement. No software metric, however, significantly correlated with execution time, power or energy consumption. In conclusion, refactoring code smells resulted to be a viable process to significantly improve software energy efficiency. The magnitude of the impact may depend on application properties, e.g. size or age. Further research is needed
+to understand the relationship between software metrics and energy efficiency.</div></li><br>
 </li>
 
 
 <!-- Item: verdecchia2017green -->
-<li ><p>
+<li >
 R. Verdecchia, F. Ricchiuti, <a href="https://dblp.uni-trier.de/pers/hd/h/Hankel:Albert" target="_blank">A. Hankel</a>, <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago, and <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a> <br><b>Green ICT Research and Challenges</b><br>
 <i>Advances and New Trends in Environmental Informatics, pp. 37-48</i>,
 2017.
 <br />
+<a href="javascript:toggleButton('verdecchia2017green','abstract')">[Abstract]</a>
 <a href="javascript:toggleButton('verdecchia2017green','bibtex')">[BibTeX]</a>
 <a href="https://robertoverdecchia.github.io/papers/EnviroInfo_2017.pdf" target="_blank">[PDF]</a>
-</p>
 <div id="verdecchia2017green-bibtex" class="bibtex noshow" style="display: none;">
 <pre>
 @article{verdecchia2017green,
@@ -323,17 +330,18 @@ R. Verdecchia, F. Ricchiuti, <a href="https://dblp.uni-trier.de/pers/hd/h/Hankel
 }
 </pre>
 </div>
+<div id="verdecchia2017green-abstract" class="abstract" style="display: none;">Green ICT is a young and pioneering field. Therefore, as often pointed out in the literature, studies evaluating the main research activities and the general direction of this new and continuously evolving research field are scarce and often incomplete. This study presents a quantitative analysis, through a systematic literature review, of the main activities, trends and issues that can be found in the Green ICT literature. The research reports the analysis of various characteristics of the studies gathered for this review, such as addressed type of effect and year of publication. It also led to the identification of the most recurrent issues of the research and development of Green ICT strategies. Finally, this study proposes a new category of effect (people awareness) that, even if often addressed by the field, is not included in current Green ICT frameworks.</div></li><br>
 </li>
 
 <!-- Item: verdecchia2017KPMG -->
-<li ><p>
+<li >
 R. Verdecchia, <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a>, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a>, and J. Koedijk <br><b>Estimating Energy Impact of Software Releases and Deployment Strategies: The KPMG Case Study</b><br>
 <i>Empirical Software Engineering and Measurement (ESEM)</i>,
 2017.
 <br />
+<a href="javascript:toggleButton('verdecchia2017estimating','abstract')">[Abstract]</a>
 <a href="javascript:toggleButton('verdecchia2017estimating','bibtex')">[BibTeX]</a>
 <a href="https://robertoverdecchia.github.io/papers/ESEM_2017.pdf" target="_blank">[PDF]</a>
-</p>
 <div id="verdecchia2017estimating-bibtex" class="bibtex noshow" style="display: none;">
 <pre>
 @inproceedings{verdecchia2017estimating,
@@ -346,6 +354,9 @@ R. Verdecchia, <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe
 }
 </pre>
 </div>
+<div id="verdecchia2017estimating-abstract" class="abstract" style="display: none;">Often motivated by optimization objectives, software products are characterized by different subsequent
+releases and deployed through different strategies. The impact of these two aspects of software on energy consumption has still to be completely understood and can be improved by carrying out ad-hoc analyses for specific software products. In this research we report on an industrial collaboration aiming at assessing the different impact that releases and deployment strategies of a software product can have on the energy consumption of its underlying hardware infrastructure. We designed and performed an empirical experiment in a controlled environment. Deployment strategies, releases and use case scenarios of an industrial third-party software product were adopted as experimental factors. The use case scenarios were used as a blocking factor and adopted to dynamically
+load-test the software product. Power consumption and execution time were selected as response variables to measure the energy consumption. We observed that both deployment strategies and software releases significantly influence the energy consumption of the hardware infrastructure. A strong interaction between the two factors was identified. The impact of such interaction highly varied depending on which use case scenario was considered, making the identification of the most frequently adopted use case scenario critical for energy optimisation. The collaboration between industry and academia has been productive for both parties, even if some practitioners manifested low interest/awareness on software energy efficiency. For the software product considered there is no absolute preferable release or deployment strategy with respect to energy efficiency, as the interaction of these factors has to be considered. The number of machines involved in a software deployment strategy does not simply constitute an additive effect of the energy consumption of the underlying hardware infrastructure.</div></li><br>
 </li>
 
 
