@@ -1,0 +1,429 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+
+<title>My Publications - Roberto Verdecchia's home </title>
+<meta name="keywords" content="Roberto, Verdecchia, Roberto Verdecchia, GSSI, L'Aquila, Vrije Universiteit Amsterdam, VU, Amsterdam, computer science, software engineering, software architecture, technical debt, empirical software engineering, green IT">
+<meta name="author" content="">
+<meta name="description" content="">
+<link rel="canonical" href="https://robertoverdecchia.github.io/">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Home" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://robertoverdecchia.github.io/" />
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My Publications">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://robertoverdecchia.github.io/publications/">
+<meta property="og:site_name" content="Roberto Verdecchia - Personal Website">
+
+<link rel="prefetch" href="https://robertoverdecchia.github.io/images/roberto-verdecchia-bio-smile.png">
+<meta charset="utf-8">
+
+<!-- Open Graph 
+
+
+
+
+
+<link rel="canonical" href="https://robertoverdecchia.github.io/publications/">
+<link href="https://robertoverdecchia.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Roberto Verdecchia's home Feed">
+
+-->
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://robertoverdecchia.github.io/assets/css/main.min.css">
+<link rel="stylesheet" href="https://robertoverdecchia.github.io/assets/academicons.css" />
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="https://robertoverdecchia.github.io/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="https://robertoverdecchia.github.io/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="https://robertoverdecchia.github.io/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="shortcut icon" href="https://robertoverdecchia.github.io/favicon.ico">
+<link rel="shortcut icon" href="https://robertoverdecchia.github.io/favicon.png">
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="https://robertoverdecchia.github.io/images/apple-icon-precomposed.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115550695-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115550695-1');
+</script>
+
+</head>
+
+<body class="page">
+<style>
+    /*********************************
+     The list of publication items
+     *********************************/
+/* The list of items */
+.biblist { }
+
+/* The item */
+.biblist li { }
+
+/* You can define custom styles for plstyle field here. */
+
+
+/*************************************
+ The box that contain BibTeX code
+ *************************************/
+div.noshow { display: none; }
+div.bibtex {
+	margin-right: 0%;
+	margin-top: 1.2em;
+	margin-bottom: 1em;
+	border: 1px solid silver;
+	padding: 0em 1em;
+	background: #ffffee;
+}
+div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}
+
+.abstract {
+      padding: 10px 15px;
+      font-size: 80%;
+      font-style: italic;
+      text-align: justify;
+      text-justify: inter-word;
+      width: 84%;
+}
+</style>
+    <!--
+
+<script type="text/javascript">
+    // Toggle Display of BibTeX
+    function toggleBibtex(articleid) {
+        var bib = document.getElementById('bib_'+articleid);
+        if (bib) {
+            if(bib.className.indexOf('bibtex') != -1) {
+                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
+            }
+        } else {
+            return;
+        }
+    }
+</script>
+-->
+
+<script>
+function toggleButton(key, button) {
+  var bibtex = key+'-bibtex';
+  var abstract = key+'-abstract';
+  var parameter = key+'-'+button;
+  var x = document.getElementById(parameter);
+  if (x.style.display === 'none') {
+    x.style.display = 'block';
+    if (parameter == bibtex) {
+      var y = document.getElementById(abstract);
+      y.style.display = 'none';
+    }
+    if (parameter == abstract) {
+      var y = document.getElementById(bibtex);
+      y.style.display = 'none';
+    }
+  } else {
+    x.style.display = 'none';
+  }
+}
+</script>
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="https://robertoverdecchia.github.io">Roberto Verdecchia's home</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				<li><a href="https://robertoverdecchia.github.io/cv/" >Curriculum</a></li>
+		        
+				<li><a href="https://robertoverdecchia.github.io/publications/" >Publications</a></li>
+		        
+				<li><a href="https://robertoverdecchia.github.io/research/" >Research</a></li>
+		        
+				<li><a href="https://robertoverdecchia.github.io/misc/" >Misc</a></li>
+		        
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "https://robertoverdecchia.github.io/images/roberto-verdecchia-publications.jpg"
+    
+  alt="My Publications feature image">
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+	<img src="https://robertoverdecchia.github.io/images/roberto-verdecchia-phd-bio.png" class="bio-photo" id="avatar" alt="Roberto Verdecchia, Phd Candidate, bio photo" onmouseover="this.src='https://robertoverdecchia.github.io/images/roberto-verdecchia-bio-smile.png'" onmouseout="this.src='https://robertoverdecchia.github.io/images/roberto-verdecchia-phd-bio.png'"></a>
+
+<h3>Roberto Verdecchia</h3>
+<p>Computer Scientist, Ph.D. Candidate at <a href="http://www.gssi.infn.it/" target="_blank" style="color:#1DA1F2">GSSI</a> and <a href="https://www.vu.nl/en" target="_blank" style="color:#1DA1F2">VU</a>.</p>
+
+
+<a href="http://scholar.google.com/citations?user=pvO-0xwAAAAJ" class="author-social" target="_blank"><i class="ai ai-google-scholar-square"></i>&nbsp; G. Scholar</a>
+
+<a href="https://www.researchgate.net/profile/Roberto_Verdecchia" class="author-social" target="_blank"><i class="ai ai-researchgate-square"></i>&nbsp; ResearchGate</a>
+
+<a href="http://linkedin.com/in/roberto-verdecchia" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+<a href="http://twitter.com/r_verdecchia" class="author-social" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>
+
+<a href="http://github.com/robertoverdecchia" class="author-social" target="_blank"><i class="fa fa-github-square"></i> Github</a>
+
+<a href="skype:roberto.verdecchia?userinfo" class="author-social"><i class="fa fa-skype"></i>&nbsp; Skype</a>
+
+<a href="mailto:roberto.verdecchia@gssi.it" class="author-social"><i class="fa fa-envelope-square"></i> e-Mail</a>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <article>
+    <h1>My Publications</h1>
+    <div class="article-wrap">
+      <p>You can also browse my <a href="http://scholar.google.es/citations?user=pvO-0xwAAAAJ" target="_blank"><font color="1DA1F2">Google Scholar profile</font></a></p>
+
+
+
+
+<!-- <h4 style="margin-bottom:0px;padding-top:10px;">Top-Tier Journal Publications</h4> --> 
+<!-- Generated from JabRef by PubList by Truong Nghiem at 11:44 on 2015.09.10. -->
+<ul class="biblist">
+
+<!-- Item: verdecchia2018mobilesoft -->
+<li>
+R. Verdecchia<br><b>Identifying Architectural Technical Debt in Android Applications through Compliance Checking</b><br>
+  <i>International Conference on Mobile Software Engineering and Systems (MobileSoft)</i>,
+  2018. (Accepted for pubblication)
+<br />
+    [<a href="javascript:toggleButton('verdecchia2018mobilesoft','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018mobilesoft','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/MobileSoft_2018.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2018mobilesoft-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2018mobilesoft,
+title = {Identifying Architectural Technical Debt in Android Applications through Compliance Checking},
+keywords = {Software Engineering, Software Architecture, Technical Debt, Android},
+author = {Roberto Verdecchia},
+year = {2018},
+booktitle = {International Conference on Mobile Software Engineering and Systems}
+}
+</pre>
+</div>
+<div id="verdecchia2018mobilesoft-abstract" class="abstract" style="display: none;">By considering the fast pace at which mobile applications need to evolve, Architectural Technical Debt results to be a crucial yet implicit factor of success. In this research we present an approach to automatically identify Architectural Technical Debt in Android applications. The approach takes advantage of architectural guide- lines extraction and modeling, architecture reverse engineering, and compliance checking. As future work, we plan to automate the process and empirically evaluate it via large-scale experiments.</div></li><br>
+
+
+<!-- Item: verdecchia2018techdebt -->
+<li>
+R. Verdecchia, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>Architectural Technical Debt Identification: The Research Landscape</b><br>
+<i>International Conference on Technical Debt (TechDebt)</i>,
+2018.<br>
+(Accepted for pubblication)
+<br />
+    [<a href="javascript:toggleButton('verdecchia2018techdebt','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018techdebt','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/TechDebt_2018.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2018techdebt-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2018techdebt,
+title = {Architectural Technical Debt Identification: The Research Landscape},
+keywords = {Software Engineering, Software Architecture, Technical Debt, Systematic Mapping Study},
+author = {Roberto Verdecchia and Ivano Malavolta and Patricia Lago},
+year = {2018},
+booktitle = {International Conference on Technical Debt (TechDebt)}
+}
+</pre>
+</div>
+<div id="verdecchia2018techdebt-abstract" class="abstract" style="display: none;">Architectural Technical Debt (ATD) regards sub-optimal design decisions that bring short-term benefits to the cost of long-term gradual deterioration of the quality of the software architecture. The identication of ATD strongly influences the technical and economic sustainability of software systems and is attracting growing interest in the scientific community. During the years several approaches for ATD identification have been conceived. Each of them, however, addresses ATD from different perspectives and with heterogeneous characteristics.
+In this paper we present a systematic mapping study on ATD identification. Our goal is to identify, classify, and evaluate the state of the art on ATD identification from the following three perspectives: publication trends, characteristics, and potential for industrial adoption. Specifically, starting from a set of 509 potentially relevant studies, we systematically selected 47 primary studies and analyzed them according to a rigorously predefined classification framework.
+The analysis of the obtained results will support both researchers and practitioners by providing (i) an assessment of current research trends and gaps in ATD identification, (ii) a solid foundation for understanding existing (and future) research, and (iii) a rigorous evaluation of its potential for industrial adoption.
+</div>
+</li>
+<br> 
+
+<!-- Item: miranda2018FAST -->
+<li>
+<a href="http://cin.ufpe.br/~bafm" target="_blank">B. Miranda</a>, <a href="https://ioemilio.github.io/" target="_blank">E. Cruciani</a>, R. Verdecchia, <a href="http://bertolino.isti.cnr.it/" target="_blank">A. Bertolino</a> <br><b>FAST Approaches to Scalable Similarity-based Test Case Prioritization
+</b><br>
+<i>International Conference on Software Engineering (ICSE)
+</i>,
+2018.
+<br />
+    [<a href="javascript:toggleButton('miranda2018fast','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('miranda2018fast','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ICSE_2018.pdf" target="_blank">[PDF]</a>
+<div id="miranda2018fast-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{miranda2018fast,
+  title = {FAST Approaches to Scalable Similarity-based Test Case Prioritization},
+  author = {Miranda, Breno and Cruciani, Emilio and Verdecchia, Roberto and Bertolino, Antonia},
+  year = {2018},
+  booktitle = {Proceedings of the 39th International Conference on Software Engineering},
+  organization={IEEE Press}
+}
+</pre>
+</div>
+<div id="miranda2018fast-abstract" class="abstract" style="display: none;">Many test case prioritization criteria have been proposed for speeding up fault detection. Among them, similarity-based approaches give priority to the test cases that are the most dissimilar from those already selected. However, the proposed criteria do not scale up to handle the many thousands or even some millions test suite sizes of modern industrial systems and simple heuristics are used instead. We introduce the FAST family of test case prioritization techniques that radically changes this landscape by borrowing algorithms commonly exploited in the big data domain to find similar items. FAST techniques provide scalable similarity-based test case prioritization in both white-box and black-box fashion. The results from experimentation on real world C and Java subjects show that the fastest members of the family outperform other black-box approaches in efficiency with no significant impact on effectiveness, and also outperform whitebox approaches, including greedy ones, if preparation time is not counted. A simulation study of scalability shows that one FAST technique can prioritize a million test cases in less than 20 minutes.</div></li><br>
+</li>
+
+<!-- Item: verdecchia2018codeSmells -->
+<li >
+    R. Verdecchia, R. A. Saez, <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a>, and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>Empirical Evaluation of the Energy Impact of Refactoring Code Smells</b><br>
+<i>International Conference on ICT for Sustainability (ICT4S)</i>,
+2018.
+<br />
+    [<a href="javascript:toggleButton('verdecchia2018codeSmells','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018codeSmells','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ICT4S_2018.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2018codeSmells-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inbook{verdecchia2018codeSmells,
+title = "Empirical Evaluation of the Energy Impact of Refactoring Code Smells",
+keywords = "Software Engineering, sustainability, energy efficiency",
+author = "Roberto Verdecchia and Saez, {Rene' Aparicio} and Giuseppe Procaccianti and Patricia Lago",
+year = "2018",
+month = "5",
+series = "ICT4S",
+booktitle = "International Conference on ICT for Sustainability"
+}
+</pre>
+</div>
+<div id="verdecchia2018codeSmells-abstract" class="abstract" style="display: none;">Software energy efficiency has gained the increasing attention of the research community. How to improve it, however, still lacks evidence. Specifically, the impact of code smell refactoring on energy efficiency has been scarcely investigated. In the exploratory study here reported, we investigate the impact on performance and energy consumption of refactoring well-known code smells on Java software applications. In order to understand if software metrics can be used as indicators of the energy impact of refactoring, we also measured the variation caused by refactoring on a set of well-established software metrics. We conducted a controlled experiment using state-of-the-art power measurement equipment. Statistical hypothesis testing and effect size estimation were performed on the experimental results, which show that in one out of three applications, refactoring each smell significantly impacted power- and energy consumption. E.g., refactoring Feature Envy and Long Method smells led to a 49% energy efficiency improvement. No software metric, however, significantly correlated with execution time, power or energy consumption. In conclusion, refactoring code smells resulted to be a viable process to significantly improve software energy efficiency. The magnitude of the impact may depend on application properties, e.g. size or age. Further research is needed
+to understand the relationship between software metrics and energy efficiency.</div></li><br>
+</li>
+
+<!-- Item: verdecchia2017KPMG -->
+<li >
+R. Verdecchia, <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a>, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a>, and J. Koedijk <br><b>Estimating Energy Impact of Software Releases and Deployment Strategies: The KPMG Case Study</b><br>
+<i>Empirical Software Engineering and Measurement (ESEM)</i>,
+2017.
+<br />
+<a href="javascript:toggleButton('verdecchia2017estimating','abstract')">[Abstract]</a>
+<a href="javascript:toggleButton('verdecchia2017estimating','bibtex')">[BibTeX]</a>
+<a href="https://robertoverdecchia.github.io/papers/ESEM_2017.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2017estimating-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2017estimating,
+  title={Estimating Energy Impact of Software Releases and Deployment Strategies: The KPMG Case Study},
+  author={Verdecchia, Roberto and Procaccianti, Giuseppe and Malavolta, Ivano and Lago, Patricia and Koedijk, Joost},
+  booktitle={Empirical Software Engineering and Measurement (ESEM), 2017 ACM/IEEE International Symposium on},
+  pages={257--266},
+  year={2017},
+  organization={IEEE}
+}
+</pre>
+</div>
+<div id="verdecchia2017estimating-abstract" class="abstract" style="display: none;">Often motivated by optimization objectives, software products are characterized by different subsequent
+releases and deployed through different strategies. The impact of these two aspects of software on energy consumption has still to be completely understood and can be improved by carrying out ad-hoc analyses for specific software products. In this research we report on an industrial collaboration aiming at assessing the different impact that releases and deployment strategies of a software product can have on the energy consumption of its underlying hardware infrastructure. We designed and performed an empirical experiment in a controlled environment. Deployment strategies, releases and use case scenarios of an industrial third-party software product were adopted as experimental factors. The use case scenarios were used as a blocking factor and adopted to dynamically
+load-test the software product. Power consumption and execution time were selected as response variables to measure the energy consumption. We observed that both deployment strategies and software releases significantly influence the energy consumption of the hardware infrastructure. A strong interaction between the two factors was identified. The impact of such interaction highly varied depending on which use case scenario was considered, making the identification of the most frequently adopted use case scenario critical for energy optimisation. The collaboration between industry and academia has been productive for both parties, even if some practitioners manifested low interest/awareness on software energy efficiency. For the software product considered there is no absolute preferable release or deployment strategy with respect to energy efficiency, as the interaction of these factors has to be considered. The number of machines involved in a software deployment strategy does not simply constitute an additive effect of the energy consumption of the underlying hardware infrastructure.</div></li><br>
+</li>
+
+<!-- Item: verdecchia2017green -->
+<li >
+R. Verdecchia, F. Ricchiuti, <a href="https://dblp.uni-trier.de/pers/hd/h/Hankel:Albert" target="_blank">A. Hankel</a>, <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago, and <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a> <br><b>Green ICT Research and Challenges</b><br>
+<i>Advances and New Trends in Environmental Informatics, pp. 37-48</i>,
+2017.
+<br />
+<a href="javascript:toggleButton('verdecchia2017green','abstract')">[Abstract]</a>
+<a href="javascript:toggleButton('verdecchia2017green','bibtex')">[BibTeX]</a>
+<a href="https://robertoverdecchia.github.io/papers/EnviroInfo_2017.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2017green-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@article{verdecchia2017green,
+  title={Green {ICT} {R}esearch and {C}hallenges},
+  author={Verdecchia, Roberto and Ricchiuti, Fabio and Hankel, Albert and Lago, Patricia and Procaccianti, Giuseppe},
+  booktitle={Advances and New Trends in Environmental Informatics},
+  pages={37--48},
+  year={2017},
+  publisher={Springer}
+}
+</pre>
+</div>
+<div id="verdecchia2017green-abstract" class="abstract" style="display: none;">Green ICT is a young and pioneering field. Therefore, as often pointed out in the literature, studies evaluating the main research activities and the general direction of this new and continuously evolving research field are scarce and often incomplete. This study presents a quantitative analysis, through a systematic literature review, of the main activities, trends and issues that can be found in the Green ICT literature. The research reports the analysis of various characteristics of the studies gathered for this review, such as addressed type of effect and year of publication. It also led to the identification of the most recurrent issues of the research and development of Green ICT strategies. Finally, this study proposes a new category of effect (people awareness) that, even if often addressed by the field, is not included in current Green ICT frameworks.</div></li><br>
+</li>
+
+
+</ul  >
+
+    </div><!-- /.article-wrap -->
+    
+  </article>
+</div><!-- /#index -->
+<div class="footer-wrap">
+  <footer>
+    <center><span>&copy; 2018 Roberto Verdecchia. Made overnight on a Mac.<br/>
+Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a>.</span></center>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://robertoverdecchia.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://robertoverdecchia.github.io/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-52736040-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+          
+
+</body>
+</html>
