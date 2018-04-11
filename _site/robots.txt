@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://robertoverdecchia.github.io/sitemap.xml
