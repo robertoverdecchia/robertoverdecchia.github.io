@@ -270,6 +270,36 @@ The analysis of the obtained results will support both researchers and practitio
 </li>
 <br> 
 
+<!-- Item: malavolta2018icsme -->
+<li>
+<a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, <i>R. Verdecchia</i>, M. Bruntink
+, B. Filipovic and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>On the Evolution of Maintainability issues of Android Applications</b><br>
+<i>IEEE International Conference on Software Maintenance and Evolution (ICSME)</i>,
+2018.
+<br />
+    [<a href="javascript:toggleButton('malavolta2018icsme','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('malavolta2018icsme','bibtex')">BibTeX</a>]
+    <!-- <a href="https://robertoverdecchia.github.io/papers/TechDebt_2018.pdf" target="_blank">[PDF]</a>
+    <a href="https://robertoverdecchia.github.io/slides/TechDebt_2018_slides.pdf" target="_blank">[Slides]</a> -->
+<div id="malavolta2018icsme-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{malavolta2018icsme,
+title = {On the Evolution of Maintainability Issues of Android Applications},
+keywords = {Software Engineering, Software Maintenance, Android Application},
+author = {IVano Malavolta, Roberto Verdecchia, Magiel Bruntink, Bojan Filipovic and Patricia Lago},
+year = {2018},
+booktitle = {International Conference on Software Maintenance and Evolution (ICSME)}
+}
+</pre>
+</div>
+<div id="malavolta2018icsme-abstract" class="abstract" style="display: none;">Context. Android is the largest mobile platform today, with thousands of apps published and updated in the Google Play store everyday. Maintenance is an important factor in Android apps lifecycle, as it allows developers to constantly expand their apps and better tailor them to their user base. <br>
+Goal. In this paper we investigate the evolution of various maintainability issues along the lifetime of Android apps. <br>
+Method. We designed and conducted an empirical study on 434 GitHub repositories containing open, real (i.e., published in the Google Play store), and actively maintained Android apps. We statically analyzed 9,945 weekly snapshots of all apps for identifying their maintainability issues over time. We also identified maintainability hotspots along the lifetime of Android apps according to how their density of maintainability issues evolves over time. More than 2,000 GitHub commits belonging to identified hotspots have been manually categorized to understand the context in which maintainability hotspots occur. <br>
+Results. Our results shed light on (i) how often various types of maintainability issues occur over the lifetime of Android apps, (ii) the stationarity and trends maintainability issue density of Android apps over time, and (iii) an in-depth characterization of development activities related to maintainability hotspots. Conclusions. Independently from the type of development activ- ity, maintainability issues grow until they stabilize, but are never fully resolved. <br>
+</div>
+</li>
+<br> 
+
 <!-- Item: verdecchia2018mobilesoft -->
 <li>
 <i>R. Verdecchia</i><br><b>Identifying Architectural Technical Debt in Android Applications through Compliance Checking</b><br>
@@ -293,6 +323,30 @@ booktitle = {International Conference on Mobile Software Engineering and Systems
 </pre>
 </div>
 <div id="verdecchia2018mobilesoft-abstract" class="abstract" style="display: none;">By considering the fast pace at which mobile applications need to evolve, Architectural Technical Debt results to be a crucial yet implicit factor of success. In this research we present an approach to automatically identify Architectural Technical Debt in Android applications. The approach takes advantage of architectural guide- lines extraction and modeling, architecture reverse engineering, and compliance checking. As future work, we plan to automate the process and empirically evaluate it via large-scale experiments.</div></li><br>
+
+<!-- Item: verdecchia2018enviroinfo -->
+<li>
+<i>R. Verdecchia</i>, <a href="https://www.hochschule-trier.de/index.php?id=18206&module=Persondetails&target=76399&source=76399&config_id=14c1c4e66fa82529f0ea5866ff93ccaa&range_id=764e3e79a0de9cb5f8af3d0b2b347981&username=a.guldner&seminar_id=b74f870387267edead010d895cac47b2/" target="_blank">A. Guldner</a>, Y. Becker, and <a href="http://www.nachhaltige-medien.de/" target="_blank">E. Kern</a> </i><br><b>Code-level Energy Hotspot Localization via Naive Spectrum Based Testing</b> (Accepted for publication)<br>
+  <i>International Conference On Enviromental Informatics (EnviroInfo)</i>, 2018.
+<br />
+    [<a href="javascript:toggleButton('verdecchia2018enviroinfo','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018enviroinfo','bibtex')">BibTeX</a>]
+    <!-- <a href="https://robertoverdecchia.github.io/papers/ICSA_2018.pdf" target="_blank">[PDF]</a>
+    <a href="https://robertoverdecchia.github.io/slides/ICSA_2018_slides.pdf" target="_blank">[Slides]</a> -->
+<div id="verdecchia2018enviroinfo-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2018enviroinfo,
+title = {Code-level Energy Hotspot Localizationvia Naive Spectrum Based Testing},
+keywords = {Software Energy Efficiency; Software Testing; Empirical Software Engineering;},
+author = {Roberto Verdecchia and Achim Guldner and Yannick Becker and Eva Kern},
+year = {2018},
+booktitle = {International Conference On Enviromental Informatics}
+}
+</pre>
+</div>
+<div id="verdecchia2018enviroinfo-abstract" class="abstract" style="display: none;">With the growing adoption of ICT solutions, the requirement for developing energy efficient software becomes increasingly important. Current methods aimed at analyzing energy demanding portions of code, referred to as ``energy hotspots'', often require ad-hoc analyses that constitute an additional process in the development life cycle. This leads to the scarce adoption of such methods in practice, leaving an open gap between source code energy optimization research and its concrete application. Thus, our underlying goal is to provide developers with a technique that enables them to efficiently gather source code energy consumption information without requiring excessive time overhead and resources.
+In this research we present a naive spectrum-based fault localization technique aimed to efficiently locate energy hotspots in source code. More specifically, our research aims to understand the viability of spectrum based energy hotspot localization and the tradeoffs which can be made between performance and precision for such techniques. Our naive yet effective approach takes as input an application and its test suite, and utilizes a simple algorithm to localize portions of code which are potentially energy-greedy. This is achieved by combining test case coverage information with runtime energy consumption measurements. The viability of the approach is assessed through an empirical experiment.
+We conclude that the naive spectrum based energy hotspot localization approach can effectively support developers by efficiently providing insights of the energy consumption of software at source code level. Since we use processes already in place in most companies and adopt straightforward data analysis processes, naive spectrum based energy hotspot localization can reduce the effort and time required for assessing energy consumption of software and thus make including the energy consumption in the development process viable. As future work we plan to (i) further investigate the tradeoffs between performance and precision of spectrum based energy hotspot approaches (ii) compare our approach to similar ones through large-scale experiments. Our ultimate goal is to conceive ad-hoc tradeoff tuning of performance and precision according to development and organizational needs.</div></li><br> 
 
 <!-- Item: verdecchia2018icsa -->
 <li>
