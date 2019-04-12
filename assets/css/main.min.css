@@ -4383,6 +4383,29 @@ body {
     }
 }
 
+@media only screen and (min-width:62em) {
+    .right-side h3
+}
+
+@media only screen and (min-width:86.375em) {
+    .right-side {
+        display: inline;
+        float: left;
+        width: 12.5%;
+        margin-right: 16.666666666666668%
+    }
+}
+
+@media only screen and (min-width:37.5em) {
+    .right-side {
+        display: block;
+        display: inline;
+        float: right;
+        width: 16.666666666666668%;
+        margin-right: 4.166666666666667%;
+        margin-left: 4.166666666666667%
+    }
+
 .article-author-bottom {
     margin-bottom: 1em
 }
