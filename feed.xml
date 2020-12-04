@@ -1,37 +1,91 @@
-
----
-layout: null
----
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-<title type="text">{{ site.title }}</title>
-<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
-<link rel="alternate" type="text/html" href="{{ site.url }}" />
-<updated>{{ site.time | date_to_xmlschema }}</updated>
-<id>{{ site.url }}/</id>
-<author>
-  <name>{{ site.owner.name }}</name>
-  <uri>{{ site.url }}/</uri>
-  <email>{{ site.owner.email }}</email>
-</author>
-{% for post in site.posts limit:20 %}
-
-<entry>
-  <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-  <link rel="alternate" type="text/html" href="{{ site.url }}{{ post.url }}" />
-  <id>{{ site.url }}{{ post.id }}</id>
-  {% if post.modified %}<updated>{{ post.modified | to_xmlschema }}T00:00:00-00:00</updated>
-  <published>{{ post.date | date_to_xmlschema }}</published>
-  {% else %}<published>{{ post.date | date_to_xmlschema }}</published>
-  <updated>{{ post.date | date_to_xmlschema }}</updated>{% endif %}
-  <author>
-    <name>{{ site.owner.name }}</name>
-    <uri>{{ site.url }}</uri>
-    <email>{{ site.owner.email }}</email>
-  </author>
-  <content type="html">{{ post.content | xml_escape }}
-  &lt;p&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt; was originally published by {{ site.owner.name }} at &lt;a href=&quot;{{ site.url }}&quot;&gt;{{ site.title }}&lt;/a&gt; on {{ post.date | date: "%B %d, %Y" }}.&lt;/p&gt;</content>
-</entry>
-{% endfor %}
-</feed>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digitalization and Sustainability Center</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+    <link>http://robertoverdecchia.github.io/disc_demo/</link>
+    <atom:link href="http://robertoverdecchia.github.io/disc_demo/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 04 Dec 2020 12:08:41 +0100</pubDate>
+    <lastBuildDate>Fri, 04 Dec 2020 12:08:41 +0100</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Dreams</title>
+        <description>
+</description>
+        <pubDate>Fri, 18 Jul 2014 00:00:00 +0200</pubDate>
+        <link>http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/18/project-1/</link>
+        <guid isPermaLink="true">http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/18/project-1/</guid>
+        
+        
+        <category>Web Development</category>
+        
+      </item>
+    
+      <item>
+        <title>Escape</title>
+        <description>
+</description>
+        <pubDate>Thu, 17 Jul 2014 00:00:00 +0200</pubDate>
+        <link>http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/17/project-2/</link>
+        <guid isPermaLink="true">http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/17/project-2/</guid>
+        
+        
+        <category>Web Development</category>
+        
+      </item>
+    
+      <item>
+        <title>Golden</title>
+        <description>
+</description>
+        <pubDate>Wed, 16 Jul 2014 00:00:00 +0200</pubDate>
+        <link>http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/16/project-3/</link>
+        <guid isPermaLink="true">http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/16/project-3/</guid>
+        
+        
+        <category>Web Development</category>
+        
+      </item>
+    
+      <item>
+        <title>Treehouse</title>
+        <description>
+</description>
+        <pubDate>Tue, 15 Jul 2014 00:00:00 +0200</pubDate>
+        <link>http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/15/project-4/</link>
+        <guid isPermaLink="true">http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/15/project-4/</guid>
+        
+        
+        <category>Web Development</category>
+        
+      </item>
+    
+      <item>
+        <title>Round Icons</title>
+        <description>
+</description>
+        <pubDate>Tue, 15 Jul 2014 00:00:00 +0200</pubDate>
+        <link>http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/15/project-6/</link>
+        <guid isPermaLink="true">http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/15/project-6/</guid>
+        
+        
+        <category>Web Development</category>
+        
+      </item>
+    
+      <item>
+        <title>Startup Framework</title>
+        <description>
+</description>
+        <pubDate>Mon, 14 Jul 2014 00:00:00 +0200</pubDate>
+        <link>http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/14/project-5/</link>
+        <guid isPermaLink="true">http://robertoverdecchia.github.io/disc_demo/web%20development/2014/07/14/project-5/</guid>
+        
+        
+        <category>Web Development</category>
+        
+      </item>
+    
+  </channel>
+</rss>
