@@ -1,0 +1,755 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+
+<title>My Publications - Roberto Verdecchia </title>
+<meta name="keywords" content="Roberto, Verdecchia, Roberto Verdecchia, GSSI, L'Aquila, Vrije Universiteit Amsterdam, VU, Amsterdam, computer science, software engineering, software architecture, technical debt, empirical software engineering, green IT">
+<meta name="author" content="">
+<meta name="description" content="">
+<link rel="canonical" href="https://robertoverdecchia.github.io/">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Home" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://robertoverdecchia.github.io/" />
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My Publications">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://robertoverdecchia.github.io/publications/">
+<meta property="og:site_name" content="Roberto Verdecchia - Personal Website">
+
+<link rel="prefetch" href="https://robertoverdecchia.github.io/images/roberto-verdecchia-bio-smile.png">
+<meta charset="utf-8">
+
+<!-- Open Graph 
+
+
+
+
+
+<link rel="canonical" href="https://robertoverdecchia.github.io/publications/">
+<link href="https://robertoverdecchia.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Roberto Verdecchia Feed">
+
+-->
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://robertoverdecchia.github.io/assets/css/main.min.css">
+<link rel="stylesheet" href="https://robertoverdecchia.github.io/assets/academicons.css" />
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="https://robertoverdecchia.github.io/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="https://robertoverdecchia.github.io/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="https://robertoverdecchia.github.io/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="shortcut icon" href="https://robertoverdecchia.github.io/favicon.ico">
+<link rel="shortcut icon" href="https://robertoverdecchia.github.io/favicon.png">
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="https://robertoverdecchia.github.io/images/apple-icon-precomposed.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115550695-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115550695-1');
+</script>
+
+<style>
+.image-wrap img
+
+{    min-height: 88px; object-fit: cover; }    
+</style>
+</head>
+
+<body class="page">
+<style>
+    /*********************************
+     The list of publication items
+     *********************************/
+/* The list of items */
+.biblist { }
+
+/* The item */
+.biblist li { }
+
+/* You can define custom styles for plstyle field here. */
+
+
+/*************************************
+ The box that contain BibTeX code
+ *************************************/
+div.noshow { display: none; }
+div.bibtex {
+	margin-right: 0%;
+	margin-top: 1.2em;
+	margin-bottom: 1em;
+	border: 1px solid silver;
+	padding: 0em 1em;
+	background: #ffffee;
+}
+div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}
+
+.abstract {
+      padding: 10px 15px;
+      font-size: 80%;
+      font-style: italic;
+      text-align: justify;
+      text-justify: inter-word;
+      width: 84%;
+}
+</style>
+    <!--
+
+<script type="text/javascript">
+    // Toggle Display of BibTeX
+    function toggleBibtex(articleid) {
+        var bib = document.getElementById('bib_'+articleid);
+        if (bib) {
+            if(bib.className.indexOf('bibtex') != -1) {
+                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
+            }
+        } else {
+            return;
+        }
+    }
+</script>
+-->
+
+<script>
+function toggleButton(key, button) {
+  var bibtex = key+'-bibtex';
+  var abstract = key+'-abstract';
+  var parameter = key+'-'+button;
+  var x = document.getElementById(parameter);
+  if (x.style.display === 'none') {
+    x.style.display = 'block';
+    if (parameter == bibtex) {
+      var y = document.getElementById(abstract);
+      y.style.display = 'none';
+    }
+    if (parameter == abstract) {
+      var y = document.getElementById(bibtex);
+      y.style.display = 'none';
+    }
+  } else {
+    x.style.display = 'none';
+  }
+}
+</script>
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="https://robertoverdecchia.github.io">Roberto Verdecchia</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				<li><a href="https://robertoverdecchia.github.io/cv/" >Curriculum</a></li>
+		        
+				<li><a href="https://robertoverdecchia.github.io/publications/" >Publications</a></li>
+		        
+				<li><a href="https://robertoverdecchia.github.io/research/" >Research</a></li>
+		        
+				<li><a href="https://robertoverdecchia.github.io/awards/" >Awards</a></li>
+		        
+				<li><a href="https://robertoverdecchia.github.io/misc/" >Misc</a></li>
+		        
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "https://robertoverdecchia.github.io/images/roberto-verdecchia-publications.jpg"
+    
+  alt="My Publications feature image">
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+	<img src="https://robertoverdecchia.github.io/images/roberto-verdecchia-phd-bio.png" class="bio-photo" id="avatar" alt="Roberto Verdecchia, Postdoctoral Research Fellow, bio photo" onmouseover="this.src='https://robertoverdecchia.github.io/images/roberto-verdecchia-bio-smile.png'" onmouseout="this.src='https://robertoverdecchia.github.io/images/roberto-verdecchia-phd-bio.png'"></a>
+
+<h3>Roberto Verdecchia</h3>
+<p>Computer Scientist, Research Fellow at <a href="https://www.vu.nl/en" target="_blank" style="color:#1DA1F2">VU</a>.</p>
+
+
+<a href="http://scholar.google.com/citations?user=pvO-0xwAAAAJ" class="author-social" target="_blank"><i class="ai ai-google-scholar-square"></i>&nbsp; G. Scholar</a>
+
+<a href="https://www.researchgate.net/profile/Roberto_Verdecchia" class="author-social" target="_blank"><i class="ai ai-researchgate-square"></i>&nbsp; ResearchGate</a>
+
+<a href="http://linkedin.com/in/roberto-verdecchia" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+<a href="http://twitter.com/r_verdecchia" class="author-social" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>
+
+<a href="http://github.com/robertoverdecchia" class="author-social" target="_blank"><i class="fa fa-github-square"></i> Github</a>
+
+<a href="skype:roberto.verdecchia?userinfo" class="author-social"><i class="fa fa-skype"></i>&nbsp; Skype</a>
+
+<a href="mailto:roberto.verdecchia@gssi.it" class="author-social"><i class="fa fa-envelope-square"></i> e-Mail</a>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <article>
+    <h1>My Publications</h1>
+    <div class="article-wrap">
+      <p>You can also browse my <a href="http://scholar.google.es/citations?user=pvO-0xwAAAAJ" target="_blank"><font color="1DA1F2">Google Scholar profile</font></a></p>
+
+
+
+
+<!-- <h4 style="margin-bottom:0px;padding-top:10px;">Top-Tier Journal Publications</h4> --> 
+<!-- Generated from JabRef by PubList by Truong Nghiem at 11:44 on 2015.09.10. -->
+<ul class="biblist">
+
+<!-- Item: verdecchia2020ecsa -->
+<li>
+<i>R. Verdecchia</i>, <a href="https://philippe.kruchten.com/" target="_blank">Philippe Kruchten</a>, and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a>
+</i><br><b>Architectural Technical Debt: A Grounded Theory</b> <br>
+  <i>European Conference on Software Architecture (ECSA)</i>, 2020.
+<br />
+    [<a href="javascript:toggleButton('verdecchia2020ecsa','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2020ecsa','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ECSA_2020.pdf" target="_blank">[PDF]</a>
+    <!-- <a href="https://robertoverdecchia.github.io/slides/EnviroInfo_2018.pdf" target="_blank">[Slides]</a> -->
+<div id="verdecchia2020ecsa-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2020ecsa,
+title = "Architectural Technical Debt: A Grounded Theory",
+abstract = "Architectural technical debt in a software-intensive system is driven by design decisions about its structure, frameworks, technologies,languages, etc. Unlike code-level technical debt, which can be readily detected by static analysers, and can often be refactored with minimal efforts, architectural debt is hard to detect, and its remediation is wide-ranging, daunting, and often avoided. The objective of this study is to develop a better understanding of how software development organisations conceptualize  their architectural debt, and how they deal with it, if at all. We used a grounded theory method, eliciting qualitative data from software architects and senior technical staff from a wide range of software development organizations. The result of the study, i.e., the theory emerging from the collected data, constitutes an encompassing conceptual theory of architectural debt, identifying and relating concepts such as symptoms, causes, consequences, and management strategies. By grounding the findings in empirical data, the theory provides researchers and practitioners with evidence of which crucial factors of architectural technical debt are experienced in industrial contexts.",
+author = "Verdecchia, R., Kruchten, P. and Patricia Lago",
+year = "2020",
+booktitle = "European Conference on Software Architecture (ECSA)"
+}
+</pre>
+</div>
+<div id="verdecchia2020ecsa-abstract" class="abstract" style="display: none;">Architectural technical debt in a software-intensive system is driven by design decisions about its structure, frameworks, technologies,languages, etc. Unlike code-level technical debt, which can be readily detected by static analysers, and can often be refactored with minimal efforts, architectural debt is hard to detect, and its remediation is wide-ranging, daunting, and often avoided. The objective of this study is to develop a better understanding of how software development organisations conceptualize  their architectural debt, and how they deal with it, if at all. We used a grounded theory method, eliciting qualitative data from software architects and senior technical staff from a wide range of software development organizations. The result of the study, i.e., the theory emerging from the collected data, constitutes an encompassing conceptual theory of architectural debt, identifying and relating concepts such as symptoms, causes, consequences, and management strategies. By grounding the findings in empirical data, the theory provides researchers and practitioners with evidence of which crucial factors of architectural technical debt are experienced in industrial contexts.</div></li><br> 
+
+<!-- Item: verdecchia2020enase -->
+<li>
+<i>R. Verdecchia</i>, <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a>, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, and <a href="https://resources.sei.cmu.edu/library/author.cfm?authorid=3659" target="_blank">I. Ozkaya </a> <br><b>ATDx: Building an Architectural Technical Debt Index</b><br>
+<i>Evaluation of Novel Approaches to Software Engineering (ENASE)</i>,
+2020.
+<br />
+    [<a href="javascript:toggleButton('verdecchia2020enase','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2020enase','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ENASE_2020.pdf" target="_blank">[PDF]</a>
+    <a href="https://robertoverdecchia.github.io/slides/ENASE_2020_slides.pdf" target="_blank">[Slides]</a>
+<div id="verdecchia2020enase-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2020vu,
+title = {ATDx: Building an Architectural Technical Debt Index},
+author = {Roberto Verdecchia and Patricia Lago and Ivano Malavolta and Ipek Ozkaya},
+year = {2020},
+booktitle = {Evaluation of Novel Approaches to Software Engineering (ENASE)}
+}
+</pre>
+</div>
+<div id="verdecchia2020enase-abstract" class="abstract" style="display: none;">
+Architectural technical debt (ATD) in software-intensive systems refers to the architecture design decisions which work as expedient in the short term, but later negatively impact system evolvability and maintainability. Over the years numerous approaches have been proposed to detect particular types of ATD at a refined level of granularity via source code analysis. Nevertheless, how to gain an encompassing overview of the ATD present in a software-intensive system is still an open question. In this study, we present a multi-step approach designed to build an ATD index (ATDx), which provides insights into a set of ATD dimensions building upon existing architectural rules by leveraging statistical analysis. The ATDx approach can be adopted by researchers and practitioners alike in order to gain a better understanding of the nature of the ATD present in software-intensive systems, and provides a systematic framework to implement concrete instances of ATDx according to specific project and organizational needs.
+</div>
+</li>
+<br> 
+
+<!-- Item: verdecchia2020vu -->
+<li>
+<i>R. Verdecchia</i>, <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a>, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, and <a href="https://resources.sei.cmu.edu/library/author.cfm?authorid=3659" target="_blank">I. Ozkaya </a> <br><b>ATDx: Prototype Implementation Technical Report</b><br>
+<i>VU Technical Reports</i>, 2020.
+<br />
+    [<a href="javascript:toggleButton('verdecchia2020vu','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2020vu','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ATDx_Technical_Report.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2020vu-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2020enase,
+title = {ATDx: Prototype Implementation Technical Report},
+author = {Roberto Verdecchia and Patricia Lago and Ivano Malavolta and Ipek Ozkaya},
+year = {2020},
+booktitle = {VU Technical Reports}
+}
+</pre>
+</div>
+<div id="verdecchia2020vu-abstract" class="abstract" style="display: none;">
+In this technical report we document a preliminary investigation carried out to evaluate the viability and the implementation feasibility of ATDx, and index designed to gain an overview of the architectural technical debt (ATD) present in a software-intensive system. We implement a prototype via the ATDx method by considering the source code static analysis tool SonarQube. This process is carried out by manually identifying 45 architectural rules, and subsequently applying the constructed prototype on a large-scale dataset composed of 6,706 open source Java-based projects. Among other results, this technical report provides insights into the benefits and drawbacks entailed by the concrete implementation of ATDx, the distribution of architectural debt across 6 distinct ATD dimensions (marked by the prominence of issues related to interfaces), and the correlation among the identified dimensions.
+</div>
+</li>
+<br>
+
+<!-- Item: lago2020enviroinfo -->
+<li>
+ <a href="http://patricialago.nl/" target="_blank">P. Lago</a>, <i>R. Verdecchia</i>, <a href="http://s2group.cs.vu.nl/people/dr-nelly-condori-fernandez/" target="_blank">N. Condori-Fernandez</a>, E. Rahmadian, J. Sturm, T. van Nijnanten, R. Bosma, C. Debuysscher, and Paulo Ricardo</i><br><b>Designing for Sustainability: Lessons Learned from Four Industrial Projects</b><br>
+<i>International Conference on Environmental Informatics (EnviroInfo)</i>, 2020. 
+<br />
+    [<a href="javascript:toggleButton('lago2020enviroinfo','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('lago2020enviroinfo','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/EnviroInfo_2020.pdf" target="_blank">[PDF]</a>
+<div id="lago2020enviroinfo-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{lago2020enviroinfo,
+  title = {Designing for Sustainability: Lessons Learned from Four Industrial Projects},
+  author = {Lago, Patricia and Verdecchia, Roberto and Condori-Fernandez, Nelly and Rahmadian, Eko and Sturm, Janina and van Nijnanten, Thijmen and Bosma, Rex and Debuysscher, Christophe and Ricardo, Paulo},
+  year = {2020},
+  booktitle = {International Conference on Environmental Informatics},
+}
+</pre>
+</div>
+<div id="lago2020enviroinfo-abstract" class="abstract" style="display: none;">Scientific research addressing the relation between software and sustainability is slowly maturing in two focus areas, related to ‘sustainable software’ and ‘software for sustainability’. The first is better understood and may include research foci like energy efficient software and software maintainability. It most-frequently covers ‘technical’ concerns. The second, ‘software for sustainability’, is much broader in both scope and potential impact, as it entails how software can contribute to sustainability goals in any sector or application domain. Next to the technical concerns, it may also cover economic, social, and environmental sustainability.
+Differently from researchers, practitioners are often not aware or well- trained in all four types of software sustainability concerns. To address this need, in previous work we have defined the Sustainability-Quality Assessment Framework (SAF) and assessed its viability via the analysis of a series of software projects. Nevertheless, it was never used by practitioners themselves, hence triggering the question: What can we learn from the use of SAF in practice? To answer this question, we report the results of practitioners applying the SAF to four industrial cases. The results show that the SAF helps practitioners in (1) creating a sustainability mindset in their practices, (2) uncovering the relevant sustainability-quality concerns for the software project at hand, and (3) reasoning about the inter-dependencies and trade-offs of such concerns as well as the related short- and long-term implications. Next to improvements for the SAF, the main lesson for us as researchers is the missing explicit link between the SAF and the (technical) architecture design.</div></li><br>
+</li>
+
+
+<!-- Item: coro2020msr -->
+<li>
+ <a href="https://sites.google.com/view/federicocoro" target="_blank">F. Corò</a>, <i>R. Verdecchia</i>, <a href="https://ioemilio.github.io/" target="_blank">E. Cruciani</a>, <a href="http://cin.ufpe.br/~bafm" target="_blank">B. Miranda</a>, and <a href="http://bertolino.isti.cnr.it/" target="_blank">A. Bertolino</a></i><br><b>JTeC: A Large Collection of Java Test Classes for Test Code Analysis and Processing
+</b><br>
+<i>International Conference on Mining Software Repositories (MSR)</i>, 2020. 
+<br />
+    [<a href="javascript:toggleButton('coro2020msr','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('coro2020msr','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/MSR_2020.pdf" target="_blank">[PDF]</a>
+    <a href="https://www.youtube.com/watch?v=kzq1lt9oyRA" target="_blank">[Demo]</a>
+
+<div id="coro2020msr-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{coro2020msr,
+  title = {JTeC: A Large Collection of Java Test Classes for Test Code Analysis and Processing},
+  author = {Cor\`o, Federico and Verdecchia, Roberto and Cruciani, Emilio and Miranda, Breno and Bertolino, Antonia},
+  year = {2020},
+  booktitle = {International Conference on Mining Software Repositories},
+}
+</pre>
+</div>
+<div id="coro2020msr-abstract" class="abstract" style="display: none;">The recent push towards test automation and test-driven develop- ment continues to scale up the dimensions of test code that needs to be maintained, analysed, and processed side-by-side with pro- duction code. As a consequence, on the one side regression testing techniques, e.g., for test suite prioritization or test case selection, capable to handle such large-scale test suites become indispensable; on the other side, as test code exposes own characteristics, specific techniques for its analysis and refactoring are actively sought. We present JTeC, a large-scale dataset of test cases that researchers can use for benchmarking the above techniques or any other type of tool expressly targeting test code. JTeC collects more than 2.5M test classes belonging to 31K+ GitHub projects and summing up to more than 430 Million SLOCs of ready-to-use real-world test code.</div></li><br>
+</li>
+
+<!-- Item: bertolino2020isti -->
+<li>
+ <a href="http://bertolino.isti.cnr.it/" target="_blank">A. Bertolino</a> , <a href="https://ioemilio.github.io/" target="_blank">E. Cruciani</a>, <a href="http://cin.ufpe.br/~bafm" target="_blank">B. Miranda</a>, and <i>R. Verdecchia</i><br><b>Know Your Neighbor: Fast Static Prediction of Test Flakiness
+</b><br>
+<i>ISTI Technical Reports</i>, 2020. 
+<br />
+    [<a href="javascript:toggleButton('bertolino2020isti','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('bertolino2020isti','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ISTI_2020.pdf" target="_blank">[PDF]</a>
+<div id="bertolino2020isti-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{bertolino2020isti,
+  title = {Scalable Approaches for Test Suite Reduction},
+  author = {Cruciani, Emilio and Miranda, Breno and Verdecchia, Roberto and Bertolino, Antonia},
+  year = {2020},
+  booktitle = {ISTI Technical Reports},
+  doi = {10.32079/ISTI-TR-2020/001}
+}
+</pre>
+</div>
+<div id="bertolino2020isti-abstract" class="abstract" style="display: none;">Flaky tests plague regression testing in Continuous Integration environments by slowing down change releases, wasting development effort, and also eroding testers trust in the test process. We present FLAST, the fast static approach to flakiness detection using test code similarity. Our extensive evaluation on 24 projects taken from repositories used in three previous studies showed that FLAST can identify flaky tests with up to 0.98 Median and 0.92 Mean precision. For six of those projects it could already yield ∼0.98 average precision values with a training set containing less than 100 tests. Besides, where known flaky tests are classified according to their causes, the same approach can also predict a flaky test category with alike precision values. The cost of the approach is negligible: the average train time over a dataset of ∼1,700 test methods is less than one second, while the average prediction time for a new test is less than one millisecond</div></li><br>
+</li>
+
+<!-- Item: cruciani2019FASTR -->
+<li>
+<a href="https://ioemilio.github.io/" target="_blank">E. Cruciani</a>, <a href="http://cin.ufpe.br/~bafm" target="_blank">B. Miranda</a>,  <i>R. Verdecchia</i>, <a href="http://bertolino.isti.cnr.it/" target="_blank">A. Bertolino</a> <br><b>Scalable Approaches for Test Suite Reduction
+</b><br>
+<i>International Conference on Software Engineering (ICSE)
+</i>,
+2019. <br>
+<div class="dark_emoji", style="display: inline">🏆</div>ACM SIGSOFT Distinguished Paper Award.<br>
+    [<a href="javascript:toggleButton('cruciani2019FASTR','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('cruciani2019FASTR','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ICSE_2019.pdf" target="_blank">[PDF]</a>
+<div id="cruciani2019FASTR-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{cruciani2019FAST-R,
+  title = {Scalable Approaches for Test Suite Reduction},
+  author = {Cruciani, Emilio and Miranda, Breno and Verdecchia, Roberto and Bertolino, Antonia},
+  year = {2019},
+  booktitle = {Proceedings of the 40th International Conference on Software Engineering},
+  organization={IEEE Press}
+}
+</pre>
+</div>
+<div id="cruciani2019FASTR-abstract" class="abstract" style="display: none;">Test suite reduction approaches aim at decreasing software regression testing costs by selecting a representative subset from large-size test suites. Most existing techniques are too expensive for handling modern massive systems and moreover depend on artifacts, such as code coverage metrics or specification models, that are not commonly available at large scale. We present a family of novel very efficient approaches for similaritybased test suite reduction that apply algorithms borrowed from the big data domain together with smart heuristics for finding an evenly spread subset of test cases. The approaches are very general since they only use as input the test cases themselves (test source code or command line input). We evaluate four approaches in a version that selects a fixed budget B of test cases, and also in an adequate version that does the reduction guaranteeing some fixed coverage. The results show that the approaches yield a fault detection loss comparable to state-of-the-art techniques, while providing huge gains in terms of efficiency. When applied to a suite of more than 500K real world test cases, the most efficient of the four approaches could select B test cases (for varying B values) in less than 10 seconds.</div></li><br>
+</li>
+
+<!-- Item: verdecchia2019icsa -->
+<li>
+<i>R. Verdecchia</i>, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>Guidelines for Architecting Android Apps: A mixed-method Empirical Study</b><br>
+<i>International Conference on Software Architecture (ICSA)</i>,
+2019.
+<br />
+    [<a href="javascript:toggleButton('verdecchia2019icsa','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2019icsa','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ICSA_2019.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2019icsa-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2019icsa,
+title = {Guidelines for Architecting Android Apps: A mixed-method Empirical Study},
+author = {Roberto Verdecchia and Ivano Malavolta and Patricia Lago},
+year = {2019},
+booktitle = {International Conference on Software Architecture (ICSA))}
+}
+</pre>
+</div>
+<div id="verdecchia2019icsa-abstract" class="abstract" style="display: none;">For surviving in the highly competitive market of Android apps, it is fundamental for app developers to deliver apps of high quality and with short release times. A well architected Android app is beneficial for developers, e.g. in terms of maintainability, testability, performance, and avoidance of resource leaks. However, how to properly architect Android apps is still debated and subject to conflicting opinions usually influenced by technological hypes rather than objective evidence. In this paper we present an empirical study on how developers architect Android apps, what architectural patterns and practices Android apps are based on, and their potential impact on quality. We apply a mixed-method empirical research design that combines (i) semi-structured interviews with Android practitioners in the field and (ii) a systematic analysis of both the grey (i.e., websites, on-line blogs) and white literature (i.e., academic studies) on the architecture of Android apps. Based on the analysis of the state of the art and practice about architecting Android apps, we systematically extract a set of 42 evidencebased guidelines supporting developers when architecting their Android apps.
+</div>
+</li>
+<br> 
+
+<!-- Item: deBoer2019MARCH -->
+<li>
+<a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a>, Jia F. Cai, <a href="https://www.archixl.nl/archixl/organisatie/wie-zijn-wij/remco" target="_blank">Remco C. de Boer</a>, <a href="https://philippe.kruchten.com/" target="_blank">Philippe Kruchten</a>, and 
+<i>R. Verdecchia</i> </i><br><b>DecidArch v2: An improved Game to teach Architecture Design Decision Making</b> <br>
+  <i>International Workshop on decision Making in Software ARCHitecture (MARCH)</i>, 2019.
+<br />
+    [<a href="javascript:toggleButton('deBoer2019MARCH','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('deBoer2019MARCH','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/HICSS_2019.pdf" target="_blank">[PDF]</a>
+    <!-- <a href="https://robertoverdecchia.github.io/slides/EnviroInfo_2018.pdf" target="_blank">[Slides]</a> -->
+<div id="deBoer2019MARCH-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{deBoer2019MARCH,
+title = "DecidArch: Playing Cards as Software Architects",
+abstract = "Teaching software architecture is a challenge because of the difficulty to expose students to actual meaningful design situations. Games can provide a useful illustration of the design decision making process, and teach students the power of team interaction for making sound decisions.We introduce a game –DecidArch– developed to achieve three learning objectives: 1) create awareness about the rationale involved in design decision making, 2) enable appreciation of the reasoning behind candidate design decisions proposed by others, and 3) create awareness about interdependencies between design decisions.The game has been played by 22 groups with a total of 83 players, all of them students of the VU software architecture course. We present some of the lessons learned, both from our observation and through participant survey. We conclude that the game well supports our three learning objectives, and we identify several improvement points for future game editions.",
+author = "{de Boer}, R.C., P. Lago, R. Verdecchia and Philippe Kruchten",
+year = "2019",
+booktitle = "3rd International Workshop on decision Making in Software ARCHitecture (MARCH)"
+}
+</pre>
+</div>
+<div id="deBoer2019MARCH-abstract" class="abstract" style="display: none;">We report on the use of our DecidArch game to teach software architecture design decision making in two consecutive years. We compare the support of three learning goals for the first version of the game with the second, revised version. Results show how the game has clearly improved. For the remaining issues, we suggest final improvements.</div></li><br> 
+
+<!-- Item: lago2019hicss -->
+<li>
+<a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a>, Jia F. Cai, <a href="https://www.archixl.nl/archixl/organisatie/wie-zijn-wij/remco" target="_blank">Remco C. de Boer</a>, <a href="https://philippe.kruchten.com/" target="_blank">Philippe Kruchten</a>, and 
+<i>R. Verdecchia</i> </i><br><b>DecidArch: Playing Cards as Software Architects</b> <br>
+  <i>Hawaii International Conference on System Sciences</i>, 2019. <br>
+<div class="dark_emoji", style="display: inline">🏆</div>Best Paper Award.<br>
+<div class="dark_emoji", style="display: inline">🏆</div>ISSIP-IBM-CBA Student Paper Award for Best Industry Studies Paper.<br>
+    [<a href="javascript:toggleButton('lago2019hicss','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('lago2019hicss','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/HICSS_2019.pdf" target="_blank">[PDF]</a>
+    <!-- <a href="https://robertoverdecchia.github.io/slides/EnviroInfo_2018.pdf" target="_blank">[Slides]</a> -->
+<div id="lago2019hicss-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{lago2019hicss,
+title = "DecidArch: Playing Cards as Software Architects",
+abstract = "Teaching software architecture is a challenge because of the difficulty to expose students to actual meaningful design situations. Games can provide a useful illustration of the design decision making process, and teach students the power of team interaction for making sound decisions.We introduce a game –DecidArch– developed to achieve three learning objectives: 1) create awareness about the rationale involved in design decision making, 2) enable appreciation of the reasoning behind candidate design decisions proposed by others, and 3) create awareness about interdependencies between design decisions.The game has been played by 22 groups with a total of 83 players, all of them students of the VU software architecture course. We present some of the lessons learned, both from our observation and through participant survey. We conclude that the game well supports our three learning objectives, and we identify several improvement points for future game editions.",
+author = "P. Lago and Cai, {Jia F.} and {de Boer}, R.C. and Philippe Kruchten and R. Verdecchia",
+year = "2018",
+booktitle = "52nd Hawaii International Conference on System Sciences (HICSS)"
+}
+</pre>
+</div>
+<div id="lago2019hicss-abstract" class="abstract" style="display: none;">Teaching software architecture is a challenge because of the difficulty to expose students to actual meaningful design situations. Games can provide a useful illustration of the design decision making process, and teach students the power of team interaction for making sound decisions.We introduce a game –DecidArch– developed to achieve three learning objectives: 1) create awareness about the rationale involved in design decision making, 2) enable appreciation of the reasoning behind candidate design decisions proposed by others, and 3) create awareness about interdependencies between design decisions.The game has been played by 22 groups with a total of 83 players, all of them students of the VU software architecture course. We present some of the lessons learned, both from our observation and through participant survey. We conclude that the game well supports our three learning objectives, and we identify several improvement points for future game editions.</div></li><br> 
+
+<!-- Item: verdecchia2018techdebt -->
+<li>
+<i>R. Verdecchia</i>, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>Architectural Technical Debt Identification: The Research Landscape</b><br>
+<i>International Conference on Technical Debt (TechDebt)</i>,
+2018.
+<br />
+    [<a href="javascript:toggleButton('verdecchia2018techdebt','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018techdebt','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/TechDebt_2018.pdf" target="_blank">[PDF]</a>
+    <a href="https://robertoverdecchia.github.io/slides/TechDebt_2018_slides.pdf" target="_blank">[Slides]</a>
+<div id="verdecchia2018techdebt-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2018techdebt,
+title = {Architectural Technical Debt Identification: The Research Landscape},
+keywords = {Software Engineering, Software Architecture, Technical Debt, Systematic Mapping Study},
+author = {Roberto Verdecchia and Ivano Malavolta and Patricia Lago},
+year = {2018},
+booktitle = {International Conference on Technical Debt (TechDebt)}
+}
+</pre>
+</div>
+<div id="verdecchia2018techdebt-abstract" class="abstract" style="display: none;">Architectural Technical Debt (ATD) regards sub-optimal design decisions that bring short-term benefits to the cost of long-term gradual deterioration of the quality of the software architecture. The identication of ATD strongly influences the technical and economic sustainability of software systems and is attracting growing interest in the scientific community. During the years several approaches for ATD identification have been conceived. Each of them, however, addresses ATD from different perspectives and with heterogeneous characteristics.
+In this paper we present a systematic mapping study on ATD identification. Our goal is to identify, classify, and evaluate the state of the art on ATD identification from the following three perspectives: publication trends, characteristics, and potential for industrial adoption. Specifically, starting from a set of 509 potentially relevant studies, we systematically selected 47 primary studies and analyzed them according to a rigorously predefined classification framework.
+The analysis of the obtained results will support both researchers and practitioners by providing (i) an assessment of current research trends and gaps in ATD identification, (ii) a solid foundation for understanding existing (and future) research, and (iii) a rigorous evaluation of its potential for industrial adoption.
+</div>
+</li>
+<br> 
+
+<!-- Item: malavolta2018icsme -->
+<li>
+<a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, <i>R. Verdecchia</i>, M. Bruntink
+, B. Filipovic and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>On the Evolution of Maintainability Issues of Android Applications</b> <br>
+<i>IEEE International Conference on Software Maintenance and Evolution (ICSME)</i>,
+2018.
+<br />
+    [<a href="javascript:toggleButton('malavolta2018icsme','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('malavolta2018icsme','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ICSME_2018.pdf" target="_blank">[PDF]</a>
+    <!--<a href="https://robertoverdecchia.github.io/slides/TechDebt_2018_slides.pdf" target="_blank">[Slides]</a> -->
+<div id="malavolta2018icsme-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{malavolta2018icsme,
+title = {On the Evolution of Maintainability Issues of Android Applications},
+keywords = {Software Engineering, Software Maintenance, Android Application},
+author = {IVano Malavolta, Roberto Verdecchia, Magiel Bruntink, Bojan Filipovic and Patricia Lago},
+year = {2018},
+booktitle = {International Conference on Software Maintenance and Evolution (ICSME)}
+}
+</pre>
+</div>
+<div id="malavolta2018icsme-abstract" class="abstract" style="display: none;">Context. Android is the largest mobile platform today, with thousands of apps published and updated in the Google Play store everyday. Maintenance is an important factor in Android apps lifecycle, as it allows developers to constantly expand their apps and better tailor them to their user base. <br>
+Goal. In this paper we investigate the evolution of various maintainability issues along the lifetime of Android apps. <br>
+Method. We designed and conducted an empirical study on 434 GitHub repositories containing open, real (i.e., published in the Google Play store), and actively maintained Android apps. We statically analyzed 9,945 weekly snapshots of all apps for identifying their maintainability issues over time. We also identified maintainability hotspots along the lifetime of Android apps according to how their density of maintainability issues evolves over time. More than 2,000 GitHub commits belonging to identified hotspots have been manually categorized to understand the context in which maintainability hotspots occur. <br>
+Results. Our results shed light on (i) how often various types of maintainability issues occur over the lifetime of Android apps, (ii) the stationarity and trends maintainability issue density of Android apps over time, and (iii) an in-depth characterization of development activities related to maintainability hotspots. Conclusions. Independently from the type of development activ- ity, maintainability issues grow until they stabilize, but are never fully resolved. <br>
+</div>
+</li>
+<br> 
+
+<!-- Item: verdecchia2018codeSmells -->
+<li >
+    <i>R. Verdecchia</i>, R. A. Saez, <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a>, and <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a> <br><b>Empirical Evaluation of the Energy Impact of Refactoring Code Smells</b><br>
+<i>International Conference on ICT for Sustainability (ICT4S)</i>,
+2018.
+<br>
+<div class="dark_emoji", style="display: inline">🏆</div>Runner-up Best Paper Award.<br>
+    [<a href="javascript:toggleButton('verdecchia2018codeSmells','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018codeSmells','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ICT4S_2018.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2018codeSmells-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inbook{verdecchia2018codeSmells,
+title = "Empirical Evaluation of the Energy Impact of Refactoring Code Smells",
+keywords = "Software Engineering, sustainability, energy efficiency",
+author = "Roberto Verdecchia and Saez, {Rene' Aparicio} and Giuseppe Procaccianti and Patricia Lago",
+year = "2018",
+month = "5",
+series = "ICT4S",
+booktitle = "International Conference on ICT for Sustainability"
+}
+</pre>
+</div>
+<div id="verdecchia2018codeSmells-abstract" class="abstract" style="display: none;">Software energy efficiency has gained the increasing attention of the research community. How to improve it, however, still lacks evidence. Specifically, the impact of code smell refactoring on energy efficiency has been scarcely investigated. In the exploratory study here reported, we investigate the impact on performance and energy consumption of refactoring well-known code smells on Java software applications. In order to understand if software metrics can be used as indicators of the energy impact of refactoring, we also measured the variation caused by refactoring on a set of well-established software metrics. We conducted a controlled experiment using state-of-the-art power measurement equipment. Statistical hypothesis testing and effect size estimation were performed on the experimental results, which show that in one out of three applications, refactoring each smell significantly impacted power- and energy consumption. E.g., refactoring Feature Envy and Long Method smells led to a 49% energy efficiency improvement. No software metric, however, significantly correlated with execution time, power or energy consumption. In conclusion, refactoring code smells resulted to be a viable process to significantly improve software energy efficiency. The magnitude of the impact may depend on application properties, e.g. size or age. Further research is needed
+to understand the relationship between software metrics and energy efficiency.</div></li><br>
+</li>
+
+<!-- Item: verdecchia2018enviroinfo -->
+<li>
+<i>R. Verdecchia</i>, <a href="https://www.hochschule-trier.de/index.php?id=18206&module=Persondetails&target=76399&source=76399&config_id=14c1c4e66fa82529f0ea5866ff93ccaa&range_id=764e3e79a0de9cb5f8af3d0b2b347981&username=a.guldner&seminar_id=b74f870387267edead010d895cac47b2/" target="_blank">A. Guldner</a>, Y. Becker, and <a href="http://www.nachhaltige-medien.de/" target="_blank">E. Kern</a> </i><br><b>Code-level Energy Hotspot Localization via Naive Spectrum Based Testing</b> <br>
+  <i>International Conference On Enviromental Informatics (EnviroInfo)</i>, 2018. <br>
+    [<a href="javascript:toggleButton('verdecchia2018enviroinfo','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018enviroinfo','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/EnviroInfo_2018.pdf" target="_blank">[PDF]</a>
+    <!-- <a href="https://robertoverdecchia.github.io/slides/EnviroInfo_2018.pdf" target="_blank">[Slides]</a> -->
+<div id="verdecchia2018enviroinfo-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2018enviroinfo,
+title = {Code-level Energy Hotspot Localizationvia Naive Spectrum Based Testing},
+keywords = {Software Energy Efficiency; Software Testing; Empirical Software Engineering;},
+author = {Roberto Verdecchia and Achim Guldner and Yannick Becker and Eva Kern},
+year = {2018},
+booktitle = {International Conference On Enviromental Informatics}
+}
+</pre>
+</div>
+<div id="verdecchia2018enviroinfo-abstract" class="abstract" style="display: none;">With the growing adoption of ICT solutions, the requirement for developing energy efficient software becomes increasingly important. Current methods aimed at analyzing energy demanding portions of code, referred to as ``energy hotspots'', often require ad-hoc analyses that constitute an additional process in the development life cycle. This leads to the scarce adoption of such methods in practice, leaving an open gap between source code energy optimization research and its concrete application. Thus, our underlying goal is to provide developers with a technique that enables them to efficiently gather source code energy consumption information without requiring excessive time overhead and resources.
+In this research we present a naive spectrum-based fault localization technique aimed to efficiently locate energy hotspots in source code. More specifically, our research aims to understand the viability of spectrum based energy hotspot localization and the tradeoffs which can be made between performance and precision for such techniques. Our naive yet effective approach takes as input an application and its test suite, and utilizes a simple algorithm to localize portions of code which are potentially energy-greedy. This is achieved by combining test case coverage information with runtime energy consumption measurements. The viability of the approach is assessed through an empirical experiment.
+We conclude that the naive spectrum based energy hotspot localization approach can effectively support developers by efficiently providing insights of the energy consumption of software at source code level. Since we use processes already in place in most companies and adopt straightforward data analysis processes, naive spectrum based energy hotspot localization can reduce the effort and time required for assessing energy consumption of software and thus make including the energy consumption in the development process viable. As future work we plan to (i) further investigate the tradeoffs between performance and precision of spectrum based energy hotspot approaches (ii) compare our approach to similar ones through large-scale experiments. Our ultimate goal is to conceive ad-hoc tradeoff tuning of performance and precision according to development and organizational needs.</div></li><br> 
+
+<!-- Item: verdecchia2018icsa -->
+<li>
+<i>R. Verdecchia</i><br><b>Identifying Architectural Technical Debt: Moving Forward</b><br>
+  <i>IEEE International Conference On Software Architecture (ICSA)</i>, 2018. <br>
+<!--  <div class="dark_emoji", style="display: inline">🏆</div>Best Early Career Researcher Award.<br> -->
+    [<a href="javascript:toggleButton('verdecchia2018icsa','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018icsa','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ICSA_2018.pdf" target="_blank">[PDF]</a>
+    <a href="https://robertoverdecchia.github.io/slides/ICSA_2018_slides.pdf" target="_blank">[Slides]</a>
+<div id="verdecchia2018icsa-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2018icsa,
+title = {Identifying Architectural Technical Debt: Moving Forward},
+keywords = {Software Architecture; Technical Debt; Software Maintenance;},
+author = {Roberto Verdecchia},
+year = {2018},
+booktitle = {IEEE International Conference On Software Architecture}
+}
+</pre>
+</div>
+<div id="verdecchia2018icsa-abstract" class="abstract" style="display: none;">In software-intensive systems, technical debt is a metaphor encompassing design and implementation constructs that are used as expedients in the short term, but that hinder future maintainability and evolvability. Architectural technical debt, in turn, adopts such concept by considering sub-optimal architectural design and implementation choices that bring short-term benefits to the cost of the long-term gradual deterioration of the quality of the software architecture.
+Architectural technical debt is an active field of research. Nevertheless, how to accurately identify and manage architectural technical debt is still an open question. Our research aims to fill this gap. In particular, our goal is to: (i) consolidate the existing knowledge of architectural technical debt identification and its management in practice, (ii) conceive novel identification and management approaches built upon the existing state of the art techniques and industrial needs, and (iii) provide empirical evidence of architectural technical debt phenomena and assess the viability of the conceived approaches.
+As a result, we envision a sound methodology aimed to support software architects in the identification and management of architectural technical debt throughout the software development process.</div></li><br>  
+
+<!-- Item: miranda2018FAST -->
+<li>
+<a href="http://cin.ufpe.br/~bafm" target="_blank">B. Miranda</a>, <a href="https://ioemilio.github.io/" target="_blank">E. Cruciani</a>, <i>R. Verdecchia</i>, <a href="http://bertolino.isti.cnr.it/" target="_blank">A. Bertolino</a> <br><b>FAST Approaches to Scalable Similarity-based Test Case Prioritization
+</b><br>
+<i>International Conference on Software Engineering (ICSE)
+</i>,
+2018.
+<br />
+    [<a href="javascript:toggleButton('miranda2018fast','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('miranda2018fast','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ICSE_2018.pdf" target="_blank">[PDF]</a>
+<div id="miranda2018fast-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{miranda2018fast,
+  title = {FAST Approaches to Scalable Similarity-based Test Case Prioritization},
+  author = {Miranda, Breno and Cruciani, Emilio and Verdecchia, Roberto and Bertolino, Antonia},
+  year = {2018},
+  booktitle = {Proceedings of the 39th International Conference on Software Engineering},
+  organization={IEEE Press}
+}
+</pre>
+</div>
+<div id="miranda2018fast-abstract" class="abstract" style="display: none;">Many test case prioritization criteria have been proposed for speeding up fault detection. Among them, similarity-based approaches give priority to the test cases that are the most dissimilar from those already selected. However, the proposed criteria do not scale up to handle the many thousands or even some millions test suite sizes of modern industrial systems and simple heuristics are used instead. We introduce the FAST family of test case prioritization techniques that radically changes this landscape by borrowing algorithms commonly exploited in the big data domain to find similar items. FAST techniques provide scalable similarity-based test case prioritization in both white-box and black-box fashion. The results from experimentation on real world C and Java subjects show that the fastest members of the family outperform other black-box approaches in efficiency with no significant impact on effectiveness, and also outperform whitebox approaches, including greedy ones, if preparation time is not counted. A simulation study of scalability shows that one FAST technique can prioritize a million test cases in less than 20 minutes.</div></li><br>
+</li>
+
+<!-- Item: verdecchia2018mobilesoft -->
+<li>
+<i>R. Verdecchia</i><br><b>Identifying Architectural Technical Debt in Android Applications through Compliance Checking</b><br>
+  <i>International Conference on Mobile Software Engineering and Systems (MobileSoft)</i>,
+  2018.<br>
+<div class="dark_emoji", style="display: inline">🏆</div>Bronze medal - ACM Student Research Competition.<br>
+    [<a href="javascript:toggleButton('verdecchia2018mobilesoft','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2018mobilesoft','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/MobileSoft_2018.pdf" target="_blank">[PDF]</a>
+    <a href="https://robertoverdecchia.github.io/slides/MobileSoft_2018_slides.pdf" target="_blank">[Slides]</a>
+    <a href="https://robertoverdecchia.github.io/posters/MOBILESoft_2018_poster.pdf" target="_blank">[Poster]</a>
+<div id="verdecchia2018mobilesoft-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2018mobilesoft,
+title = {Identifying Architectural Technical Debt in Android Applications through Compliance Checking},
+keywords = {Software Engineering, Software Architecture, Technical Debt, Android},
+author = {Roberto Verdecchia},
+year = {2018},
+booktitle = {International Conference on Mobile Software Engineering and Systems}
+}
+</pre>
+</div>
+<div id="verdecchia2018mobilesoft-abstract" class="abstract" style="display: none;">By considering the fast pace at which mobile applications need to evolve, Architectural Technical Debt results to be a crucial yet implicit factor of success. In this research we present an approach to automatically identify Architectural Technical Debt in Android applications. The approach takes advantage of architectural guide- lines extraction and modeling, architecture reverse engineering, and compliance checking. As future work, we plan to automate the process and empirically evaluate it via large-scale experiments.</div></li><br>
+
+<!-- Item: verdecchia2017KPMG -->
+<li >
+<i>R. Verdecchia</i>, <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a>, <a href="http://www.ivanomalavolta.com/" target="_blank">I. Malavolta</a>, <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago</a>, and J. Koedijk <br><b>Estimating Energy Impact of Software Releases and Deployment Strategies: The KPMG Case Study</b><br>
+<i>Empirical Software Engineering and Measurement (ESEM)</i>,
+2017.
+<br />
+<a href="javascript:toggleButton('verdecchia2017estimating','abstract')">[Abstract]</a>
+<a href="javascript:toggleButton('verdecchia2017estimating','bibtex')">[BibTeX]</a>
+<a href="https://robertoverdecchia.github.io/papers/ESEM_2017.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2017estimating-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@inproceedings{verdecchia2017estimating,
+  title={Estimating Energy Impact of Software Releases and Deployment Strategies: The KPMG Case Study},
+  author={Verdecchia, Roberto and Procaccianti, Giuseppe and Malavolta, Ivano and Lago, Patricia and Koedijk, Joost},
+  booktitle={Empirical Software Engineering and Measurement (ESEM), 2017 ACM/IEEE International Symposium on},
+  pages={257--266},
+  year={2017},
+  organization={IEEE}
+}
+</pre>
+</div>
+<div id="verdecchia2017estimating-abstract" class="abstract" style="display: none;">Often motivated by optimization objectives, software products are characterized by different subsequent
+releases and deployed through different strategies. The impact of these two aspects of software on energy consumption has still to be completely understood and can be improved by carrying out ad-hoc analyses for specific software products. In this research we report on an industrial collaboration aiming at assessing the different impact that releases and deployment strategies of a software product can have on the energy consumption of its underlying hardware infrastructure. We designed and performed an empirical experiment in a controlled environment. Deployment strategies, releases and use case scenarios of an industrial third-party software product were adopted as experimental factors. The use case scenarios were used as a blocking factor and adopted to dynamically
+load-test the software product. Power consumption and execution time were selected as response variables to measure the energy consumption. We observed that both deployment strategies and software releases significantly influence the energy consumption of the hardware infrastructure. A strong interaction between the two factors was identified. The impact of such interaction highly varied depending on which use case scenario was considered, making the identification of the most frequently adopted use case scenario critical for energy optimisation. The collaboration between industry and academia has been productive for both parties, even if some practitioners manifested low interest/awareness on software energy efficiency. For the software product considered there is no absolute preferable release or deployment strategy with respect to energy efficiency, as the interaction of these factors has to be considered. The number of machines involved in a software deployment strategy does not simply constitute an additive effect of the energy consumption of the underlying hardware infrastructure.</div></li><br>
+</li>
+
+<!-- Item: verdecchia2017green -->
+<li >
+<i>R. Verdecchia</i>, F. Ricchiuti, <a href="https://dblp.uni-trier.de/pers/hd/h/Hankel:Albert" target="_blank">A. Hankel</a>, <a href="http://www.cs.vu.nl/~patricia/Patricia_Lago/Home.html" target="_blank">P. Lago, and <a href="http://dblp.uni-trier.de/pers/hd/p/Procaccianti:Giuseppe" target="_blank">Giuseppe Procaccianti</a> <br><b>Green ICT Research and Challenges</b><br>
+<i>Advances and New Trends in Environmental Informatics, pp. 37-48</i>,
+2017.
+<br />
+<a href="javascript:toggleButton('verdecchia2017green','abstract')">[Abstract]</a>
+<a href="javascript:toggleButton('verdecchia2017green','bibtex')">[BibTeX]</a>
+<a href="https://robertoverdecchia.github.io/papers/EnviroInfo_2017.pdf" target="_blank">[PDF]</a>
+<div id="verdecchia2017green-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@article{verdecchia2017green,
+  title={Green {ICT} {R}esearch and {C}hallenges},
+  author={Verdecchia, Roberto and Ricchiuti, Fabio and Hankel, Albert and Lago, Patricia and Procaccianti, Giuseppe},
+  booktitle={Advances and New Trends in Environmental Informatics},
+  pages={37--48},
+  year={2017},
+  publisher={Springer}
+}
+</pre>
+</div>
+<div id="verdecchia2017green-abstract" class="abstract" style="display: none;">Green ICT is a young and pioneering field. Therefore, as often pointed out in the literature, studies evaluating the main research activities and the general direction of this new and continuously evolving research field are scarce and often incomplete. This study presents a quantitative analysis, through a systematic literature review, of the main activities, trends and issues that can be found in the Green ICT literature. The research reports the analysis of various characteristics of the studies gathered for this review, such as addressed type of effect and year of publication. It also led to the identification of the most recurrent issues of the research and development of Green ICT strategies. Finally, this study proposes a new category of effect (people awareness) that, even if often addressed by the field, is not included in current Green ICT frameworks.</div></li><br>
+</li>
+</ul>
+
+<p style="font-size:12px; line-height:1"; align="justify">The entirety of above linked documents are made available as a mean to ensure timely dissemination of scholarly and technical work on a non-commercial basis. Copyright and all rights therein are maintained by the authors or by other copyright holders, notwithstanding that the works are offered here electronically. It is understood that all persons utilizing this information will adhere to the terms and constraints invoked by each copyright holder. These works may not be reposted without the explicit permission of the copyright holders.</p>
+
+    </div><!-- /.article-wrap -->
+    
+  </article>
+</div><!-- /#index -->
+<div class="footer-wrap">
+  <footer>
+    <center><span>&copy; 2020 Roberto Verdecchia.<br/>
+Made overnight on a Mac. <br/> 
+Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a>.</span></center>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://robertoverdecchia.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://robertoverdecchia.github.io/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-52736040-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+          
+
+</body>
+</html>
