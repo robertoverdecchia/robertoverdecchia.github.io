@@ -247,6 +247,7 @@ function toggleButton(key, button) {
 <!-- Generated from JabRef by PubList by Truong Nghiem at 11:44 on 2015.09.10. -->
 <ul class="biblist">
 
+
 <!-- Item: verdecchia2021architectural -->
 <li>
   <i>R. Verdecchia</i>
@@ -473,6 +474,36 @@ This technology landscape is intended for all stakeholders that aim at contribut
 Mobile platforms are rapidly and continuously changing, with support for new sensors, APIs, and programming abstractions. Static analysis is gaining a growing interest, allowing developers to predict properties about the run-time behavior of mobile apps without executing them. Over the years, literally hundreds of static analysis techniques have been proposed, ranging from structural and control-flow analysis to state-based analysis.
 In this paper, we present a systematic mapping study aimed at identifying, evaluating and classifying characteristics, trends and potential for industrial adoption of existing research in static analysis of mobile apps. Starting from over 12,000 potentially relevant studies, we applied a rigorous selection procedure resulting in 261 primary studies along a time span of 9 years. We analyzed each primary study according to a rigorously-defined classification framework. The results of this study give a solid foundation for assessing existing and future approaches for static analysis of mobile apps, especially in terms of their industrial adoptability.
 Researchers and practitioners can use the results of this study to (i) identify existing research/technical gaps to target, (ii) understand how approaches developed in academia can be successfully transferred to industry, and (iii) better position their (past and future) approaches for static analysis of mobile apps.</div>
+</li>
+<br> 
+
+<!-- Item: herbold2021bug -->
+<li>
+Steffen Herbold, Alexander Trautsch, Benjamin Ledel, Alireza Aghamohammadi, Taher Ahmed Ghaleb, Kuljit Kaur Chahal, Tim Bossenmaier, Bhaveet Nagaria, Philip Makedonski, Matin Nili Ahmadabadi, Kristof Szabados, Helge Spieker, Matej Madeja, Nathaniel Hoy, Valentina Lenarduzzi, Shangwen Wang, Gema Rodríguez-Pérez, Ricardo Colomo-Palacios, <i>Roberto Verdecchia</i>, Paramvir Singh, Yihao Qin, Debasish Chakroborti, Willard Davis, Vijay Walunj, Hongjun Wu, Diego Marcilio, Omar Alam, Abdullah Aldaeej, Idan Amit, Burak Turhan, Simon Eismann, Anna-Katharina Wickert, Ivano Malavolta, Matus Sulir, Fatemeh Fard, Austin Z Henley, Stratos Kourtzanidis, Eray Tuzun, Christoph Treude, Simin Maleki Shamasbi, Ivan Pashchenko, Marvin Wyrich, James Davis, Alexander Serebrenik, Ella Albrecht, Ethem Utku Aktas, Daniel Strüber, and Johannes Erbel.
+  <br><b>A Fine-grained Data Set and Analysis of Tangling in Bug Fixing Commits</b><br>
+  <i>Empirical Software Engineering (EMSE)</i>,
+  2021.
+  <br />
+      [<a href="javascript:toggleButton('herbold2021bug','abstract')">Abstract</a>]
+      [<a href="javascript:toggleButton('herbold2021bug','bibtex')">BibTeX</a>]
+      <a href="https://robertoverdecchia.github.io/papers/EMSE_2021.pdf" target="_blank">[PDF]</a>
+  <div id="herbold2021bug-bibtex" class="bibtex noshow" style="display: none;">
+  <pre>
+  @article{herbold2021bug,
+    title={A Fine-grained Data Set and Analysis of Tangling in Bug Fixing Commits},
+    author={Steffen Herbold, Alexander Trautsch, Benjamin Ledel, Alireza Aghamohammadi, Taher Ahmed Ghaleb, Kuljit Kaur Chahal, Tim Bossenmaier, Bhaveet Nagaria, Philip Makedonski, Matin Nili Ahmadabadi, Kristof Szabados, Helge Spieker, Matej Madeja, Nathaniel Hoy, Valentina Lenarduzzi, Shangwen Wang, Gema Rodriguez-Perez, Ricardo Colomo-Palacios, Roberto Verdecchia, Paramvir Singh, Yihao Qin, Debasish Chakroborti, Willard Davis, Vijay Walunj, Hongjun Wu, Diego Marcilio, Omar Alam, Abdullah Aldaeej, Idan Amit, Burak Turhan, Simon Eismann, Anna-Katharina Wickert, Ivano Malavolta, Matus Sulir, Fatemeh Fard, Austin Z Henley, Stratos Kourtzanidis, Eray Tuzun, Christoph Treude, Simin Maleki Shamasbi, Ivan Pashchenko, Marvin Wyrich, James Davis, Alexander Serebrenik, Ella Albrecht, Ethem Utku Aktas, Daniel Strüber, and Johannes Erbel},
+    journal={Empirical Software Engineering},
+    year={2021},
+    publisher={Springer}
+  }</pre>
+  </div>
+<div id="herbold2021bug-abstract" class="abstract" style="display: none;">
+Context: Tangled commits are changes to software that address multiple concerns at once. For researchers interested in bugs, tangled commits mean that they actually study not only bugs, but also other concerns irrelevant for the study of bugs.
+Objective: We want to improve our understanding of the prevalence of tangling and the types of changes that are tangled within bug fixing commits.
+Methods: We use a crowd sourcing approach for manual labeling to validate which changes contribute to bug fixes for each line in bug fixing commits. Each line is labeled by four participants. If at least three participants agree on the same label, we have consensus.
+Results: We estimate that between 17% and 32% of all changes in bug fixing commits modify the source code to fix the underlying problem. However, when we only consider changes to the production code files this ratio increases to 66% to 87%. We find that about 11% of lines are hard to label leading to active disagreements between participants. Due to confirmed tangling and the uncertainty in our data, we estimate that 3% to 47% of data is noisy without manual untangling, depending on the use case.
+Conclusion: Tangled commits have a high prevalence in bug fixes and can lead to a large amount of noise in the data. Prior research indicates that this noise may alter results. As researchers, we should be skeptics and assume that unvalidated data is likely very noisy, until proven otherwise.
+</div>
 </li>
 <br> 
 
