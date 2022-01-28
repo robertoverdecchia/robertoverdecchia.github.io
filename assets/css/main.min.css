@@ -372,6 +372,7 @@ figcaption {
 .dark_emoji {
   color: transparent;
   text-shadow: 0 0 0 #464646;
+  display: inline;
 }
 
 .image-credit {
