@@ -1220,6 +1220,10 @@ ol.CodeRay li {
     visibility: hidden
 }
 
+.hiddenhp {
+  display: none;
+}
+
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     position: static;
