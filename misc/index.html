@@ -192,8 +192,161 @@ If you have some work to do, I would strongly advise you to come back here some 
   <li><a href="https://www.npr.org/series/tiny-desk-concerts/" target="_blank"><font color="1DA1F2">Tiny Desk</font></a>: NPR’s Tiny Desk concerts present what I personally consider some of the best unplugged concerts I’ve ever seen.</li>
 </ul>
 
+<h2 id="a-pinch-of-personal-me-oddities">A pinch of “personal me” oddities</h2>
+
+<style>
+  .puzzle-container {
+    display: inline-block;
+    width: 198px; /* 2/3 of the original width */
+    height: 198px; /* 2/3 of the original height */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    overflow: hidden;
+    position: relative;
+  } 
+
+  .puzzle-piece {
+          width: 66px; /* 2/3 of the original width */
+          height: 66px; /* 2/3 of the original height */
+          background-size: 198px 198px; /* 2/3 of the original size */
+          outline: 1px solid #000;
+          outline-offset: -1px;
+          position: absolute;
+          transition: top 0.2s, left 0.2s;
+          background-position: center center;
+  }
+
+        .hidden {
+            display: none;
+        }
+ </style>
+
+<div id="message">
+  To catch a glimpse of my non-software-related side, order the picture below (not because of security or anything, just because I was bored, and maybe you are too).<br /><br /> 
+  Clicking on two pieces makes them swap. Alternatively, you can also just look at the source code (I might have been too lazy to cypher the content)...but come on, games are fun.<br /><br />
+  <!-- Sliding Puzzle Game HTML Code -->
+  <div class="puzzle-container" id="puzzleContainer"></div>
+      <script>
+        window.onload = function() {
+    // Your code here
+    var imageSrc = 'https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg'; // Replace with your image URL
+    var puzzlePieces = [];
+    var emptyPieceIndex = 8;
+    var solvedPositions = [
+      { top: 0, left: 0 },
+      { top: 0, left: 66 },
+      { top: 0, left: 132 },
+      { top: 66, left: 0 },
+      { top: 66, left: 66 },
+      { top: 66, left: 132 },
+      { top: 132, left: 0 },
+      { top: 132, left: 66 },
+      { top: 132, left: 132 }
+    ];
+    var selectedPieceIndex = null;
+
+    // Create the puzzle pieces and scramble them
+    createPuzzlePieces();
+    scramblePieces();
+
+    function createPuzzlePieces() {
+        var puzzleContainer = document.getElementById('puzzleContainer');
+        for (var i = 0; i < 9; i++) {
+            var piece = document.createElement('div');
+            piece.className = 'puzzle-piece';
+            piece.style.backgroundImage = 'url(' + imageSrc + ')';
+            piece.style.backgroundPosition = (-solvedPositions[i].left) + 'px ' + (-solvedPositions[i].top) + 'px';
+            piece.addEventListener('click', function() {
+                if (selectedPieceIndex === null) {
+                    selectedPieceIndex = puzzlePieces.indexOf(this);
+                    this.classList.add('selected');
+                } else {
+                    var secondPieceIndex = puzzlePieces.indexOf(this);
+                    swapPieces(selectedPieceIndex, secondPieceIndex);
+                    puzzlePieces[selectedPieceIndex].classList.remove('selected');
+                    selectedPieceIndex = null;
+                    checkWinCondition();
+                }
+            });
+            puzzleContainer.appendChild(piece);
+            puzzlePieces.push(piece);
+        }
+    }
+
+    function swapPieces(index1, index2) {
+        var tempTop = puzzlePieces[index1].style.top;
+        var tempLeft = puzzlePieces[index1].style.left;
+        puzzlePieces[index1].style.top = puzzlePieces[index2].style.top;
+        puzzlePieces[index1].style.left = puzzlePieces[index2].style.left;
+        puzzlePieces[index2].style.top = tempTop;
+        puzzlePieces[index2].style.left = tempLeft;
+    }
+
+    function scramblePieces() {
+        var positions = [...solvedPositions];
+        for (var i = positions.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = positions[i];
+            positions[i] = positions[j];
+            positions[j] = temp;
+        }
+
+        for (var i = 0; i < positions.length; i++) {
+            puzzlePieces[i].style.top = positions[i].top + 'px';
+            puzzlePieces[i].style.left = positions[i].left + 'px';
+        }
+    }
+
+    function checkWinCondition() {
+        var isWin = true;
+        for (var i = 0; i < puzzlePieces.length; i++) {
+            var currentTop = parseInt(puzzlePieces[i].style.top);
+            var currentLeft = parseInt(puzzlePieces[i].style.left);
+            if (currentTop !== solvedPositions[i].top || currentLeft !== solvedPositions[i].left) {
+                isWin = false;
+                break;
+            }
+        }
+
+        if (isWin) {
+            displayWinMessage();
+
+        }
+    }
+
+    function displayWinMessage() {
+        var puzzleContainer = document.getElementById('puzzleContainer');
+        puzzleContainer.classList.add('hidden');
+        document.getElementById('message').classList.add('hidden');
+
+        var winMessage = document.getElementById('winMessage');
+        winMessage.classList.remove('hidden');
+    }
+};
+</script>
+</div>
+
+<div id="winMessage" class="hidden">
+  I legally possess two separate surnames. The one I use less often is <i>Schneider</i> (ʃnɑ́jdə, German for "tailor"). <br /><br />
+
+  I am a certified first level <a href="https://www.fisar.org/" target="_blank"><font color="1DA1F2">FISAR</font></a> sommelier. Accordingly, my drug of choice would be a good bottle of <a href="https://www.montevertine.it/pergole_torte/" target="_blank"><font color="1DA1F2">Pergole Torte</font></a> or a similar wine.<br /><br />
+
+  I love playing sports (pronounced "SPORTS!" with clenched fists). I played <a href="https://en.wikipedia.org/wiki/Capoeira" target="_blank"><font color="1DA1F2">Capoeira</font></a> for about 8 years, won some tennis tournaments, was in the national  <a href="https://en.wikipedia.org/wiki/Water_basketball" target="_blank"><font color="1DA1F2">waterbasket</font></a> winning team, and raced many regattas on the <a href="https://www.google.com/maps/place/Elba/@42.7902559,10.2733136,12z/data=!3m1!4b1!4m6!3m5!1s0x12d63605d9e7d193:0xeb77d80e8ef78342!8m2!3d42.7781867!4d10.1927389!16zL20vMDJ2ZjE!5m1!1e4?entry=ttu" target="_blank"><font color="1DA1F2">Elba island</font></a> with my <a href="https://www.laserinternational.org/" target="_blank"><font color="1DA1F2">ILCA 7</font></a>. Currently, I regularly enjoy boxing, jogging, weight lifting, and playing beach volleyball (it all makes sense if you think that I'm training for <a href="https://en.wikipedia.org/wiki/Chess_boxing" target="_blank"><font color="1DA1F2">chess boxing</font></a> and like sand).<br /><br />
+
+  I am a member of the <i>Florentine Crossbowmen</i>, where I practice traditional archery.<br /><br />
+
+  Avid boardgame player, I spent countless sessions playing (mostly euro)games such as <i>Carcassonne, A Game of Thrones, Twilight Imperium, Terra Mystica</i>, and <i>Ascension</i> (among others).<br /><br />
+
+  Bookworm, I mostly dwell in reading sci-fi (e.g., the <i>Broken Earth</i> series), non-fiction (shout out to Popper and Chomsky), and way too many graphic novels (if you have never read anything by Mœbius, I think you should).<br /><br />
+
+  Every now and then, I enjoy hitting twisties and exploring new places with a very patient <a href="https://www.stromtrooper.com/" target="_blank"><font color="1DA1F2">Wee</font></a>.<br /><br />
+
+  Flexitarian by diet, pastafarian by belief.    
+</div>
+
 <h2 id="website-easter-eggs">Website easter eggs</h2>
-<p>There are a total of 3 easter eggs on this website (and counting). <br /><br /><em>The first easter egg is graphical and hidden almost everywhere you’ll look,<br /> the second is magically linked beyond my publications,<br />
+<p>There are a total of 3 easter eggs on this website (and counting). <br /><br /><em>The first easter egg is graphical and hidden almost everywhere you’ll look (if your screen is big enough),<br /> the second is magically linked beyond my publications,<br />
 the third and last one is hidden in plain sight, but only in the source home</em>. <br />
 <br />(Don’t think <a href="https://en.wikipedia.org/wiki/Cicada_3301">Cicada-like</a> riddles, I like to regard myself as a simple person)</p>
 
