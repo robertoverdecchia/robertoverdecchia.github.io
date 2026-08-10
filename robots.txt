@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: https://robertoverdecchia.github.io/assets/js/plugins/4rm4nd.bf.txt
 
 Sitemap: https://robertoverdecchia.github.io/sitemap.xml
