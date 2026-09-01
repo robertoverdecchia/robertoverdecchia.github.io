@@ -281,6 +281,33 @@ function toggleButton(key, button) {
 <ul class="biblist">
 
 
+<!-- Item: verdecchia2026empirical -->
+<li>
+<i>R. Verdecchia</i>, <a href="https://xjreb.github.io/" target="_blank">J. Bogner</a><br><b>Empirical Software Engineering in Practice:
+Insights from Google</b><br>
+<i>ACM SIGSOFT Software Engineering Notes (SIGSOFT-SEN)</i>,
+2026.
+<br />
+    [<a href="javascript:toggleButton('verdecchia2026empirical','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('verdecchia2026empirical','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ACM_SIGSOFT_SEN_2026_3.pdf" target="_blank">[PDF]</a>
+
+<div id="verdecchia2026empirical-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@article{verdecchia2026empirical,
+  title={Empirical Software Engineering in Practice: Insights from Google},
+  author={Verdecchia, Roberto and Bogner, Justus},
+  journal={ACM SIGSOFT Software Engineering Notes (SIGSOFT-SEN)},
+  year={2026},
+  publisher={ACM}
+}
+</pre>
+</div>
+<div id="verdecchia2026empirical-abstract" class="abstract" style="display: none;">
+While it is fairly well known how empirical software engineering (ESE) is used in the academic world, we have limited knowledge of how ESE is practiced in industry. As part of our regular column on empirical software engineering (ACM SIGSOFT SEN-ESE), we want to dedicate a series of articles to interviewing ESE practitioners from various companies. Among other things, we want to understand how ESE processes are implemented in industry, e.g., different research methods, how practitioners decide on what to study, how research results are used within companies and beyond, and if they face recurrent impediments to using ESE methods in industrial contexts. In the first edition of ESE in Practice, we are joined by Ciera Jaspan and Collin Green from the Developer Intelligence team at Google. This article is a faithful account of our conversation from August 13, 2026, which we edited for our~column.</div>
+</li>
+<br> 
+
 <!-- Item: becattini2026engineering -->
 <li>
 M. Becattini, M. Minin, L. Cioni,  <a href="https://eden.dei.uc.pt/~cnl/" target="_blank">N. Laranjeiro</a>, <i>R. Verdecchia</i>,  <a href="https://stlab.dinfo.unifi.it/vicario/" target="_blank">E. Vicario</a><br><b>Engineering Reliability into LLM Multi-Agent
@@ -304,32 +331,6 @@ Systems: An Industrial Experience</b><br>
 </div>
 <div id="becattini2026engineering-abstract" class="abstract" style="display: none;">
 A central tension in productionizing LLM agents lies between the intrinsically deterministic requirements of engineering and the stochastic nature of AI models, a tension often aggravated by the unreliability of the data the models consume. In this work, we present an experience on engineering reliability into an LLM Multi-Agent system, namely HorseReport, a production service launched at the 127th edition of the largest equestrian fair in Italy. HorseReport implements five different reliability mechanisms, namely (i) layered acquisition with graceful fallback, (ii) output as a compile-time contract, (iii) bounded, self-repairing compilation, (iv) persistent state with automatic resumption, and (v) granular observability by design. The system relies on a Kafka pipeline to first scrape unreliable sources with progressively more robust fetch strategies, with HTTP first, and browser automation as a last resort, and subsequently run nine LLM agents in two parallel phases, each writing one LaTeX section of the report. Each agent can use only a whitelist of LaTeX commands intended to reduce invalid markup, and the HorseReport pipeline saves its state so interrupted runs resume on their own. As upstream output stabilised, an early LLM self-repair loop was replaced by a deterministic, log-driven fixer that avoids additional model calls. To date, HorseReport has processed 328 reports without requiring any manual intervention, with over 95% of a 100-report sample judged acceptable by domain experts, a median latency of approximately 70 seconds, and an LLM API cost of about C0.18 per report. From the industrial case study, we draw four main lessons learned on engineering reliability into LLM Multi-Agent Systems, namely (i) constrain LLMs rather than trust them, (ii) once a stochastic stage is reliable, prefer determinism, (iii) make reliability and cost observable per unit, and (iv) unattended operation is a systems property, not a model property.</li>
-<br> 
-
-<!-- Item: bogner2026state -->
-<li>
-<a href="https://xjreb.github.io/" target="_blank">J. Bogner</a>, <i>R. Verdecchia</i><br><b>The State of Peer Review in Empirical Software Engineering: A Community Survey on Review Load, Quality, and GenAI Use</b><br>
-<i>ACM SIGSOFT Software Engineering Notes (SIGSOFT-SEN)</i>,
-2026.
-<br />
-    [<a href="javascript:toggleButton('bogner2026state','abstract')">Abstract</a>]
-    [<a href="javascript:toggleButton('bogner2026state','bibtex')">BibTeX</a>]
-    <a href="https://robertoverdecchia.github.io/papers/ACM_SIGSOFT_SEN_2026_2.pdf" target="_blank">[PDF]</a>
-
-<div id="bogner2026state-bibtex" class="bibtex noshow" style="display: none;">
-<pre>
-@article{bogner2026state,
-  title={The State of Peer Review in Empirical Software Engineering: A Community Survey on Review Load, Quality, and GenAI Use},
-  author={Bogner, Justus, and Verdecchia, Roberto},
-  journal={ACM SIGSOFT Software Engineering Notes (SIGSOFT-SEN)},
-  year={2026},
-  publisher={ACM}
-}
-</pre>
-</div>
-<div id="bogner2026state-abstract" class="abstract" style="display: none;">
-The scientific peer review system has been slowly deteriorating over the last years, and not just within empirical software engineering (ESE) research. Increased submission numbers, high workload, and the rise of generative AI use with all its associated issues have made many cracks in the system more visible. To get a better understanding of the current state of peer review in the ESE community, we conducted a questionnaire survey, which accumulated 120 responses. We report on (i) the perceived review load of community members, (ii) review quality perception as well as frequent challenges for and issues with reviews, (iii) the use of LLM-based tools in the reviewing process, and (iv) the community’s suggestions for improving the peer review system. We hope that these community opinions can facilitate more evidence-based discussions about how people want to see the review system change for the better</div>
-</li>
 <br> 
 
 <!-- Item: heeren2026systematic -->
@@ -390,6 +391,31 @@ M. Becattini, N. Caselli, M. Minin, <i>R. Verdecchia</i>, <a href="https://stlab
   </li>
 <br> 
 
+<!-- Item: bogner2026state -->
+<li>
+<a href="https://xjreb.github.io/" target="_blank">J. Bogner</a>, <i>R. Verdecchia</i><br><b>The State of Peer Review in Empirical Software Engineering: A Community Survey on Review Load, Quality, and GenAI Use</b><br>
+<i>ACM SIGSOFT Software Engineering Notes (SIGSOFT-SEN)</i>,
+2026.
+<br />
+    [<a href="javascript:toggleButton('bogner2026state','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('bogner2026state','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/ACM_SIGSOFT_SEN_2026_2.pdf" target="_blank">[PDF]</a>
+
+<div id="bogner2026state-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@article{bogner2026state,
+  title={The State of Peer Review in Empirical Software Engineering: A Community Survey on Review Load, Quality, and GenAI Use},
+  author={Bogner, Justus, and Verdecchia, Roberto},
+  journal={ACM SIGSOFT Software Engineering Notes (SIGSOFT-SEN)},
+  year={2026},
+  publisher={ACM}
+}
+</pre>
+</div>
+<div id="bogner2026state-abstract" class="abstract" style="display: none;">
+The scientific peer review system has been slowly deteriorating over the last years, and not just within empirical software engineering (ESE) research. Increased submission numbers, high workload, and the rise of generative AI use with all its associated issues have made many cracks in the system more visible. To get a better understanding of the current state of peer review in the ESE community, we conducted a questionnaire survey, which accumulated 120 responses. We report on (i) the perceived review load of community members, (ii) review quality perception as well as frequent challenges for and issues with reviews, (iii) the use of LLM-based tools in the reviewing process, and (iv) the community’s suggestions for improving the peer review system. We hope that these community opinions can facilitate more evidence-based discussions about how people want to see the review system change for the better</div>
+</li>
+<br> 
 
 <!-- Item: verdecchia2026that -->
 <li>
