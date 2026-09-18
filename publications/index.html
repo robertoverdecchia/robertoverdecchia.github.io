@@ -281,6 +281,34 @@ function toggleButton(key, button) {
 <ul class="biblist">
 
 
+<!-- Item: bertazzini2026hidden -->
+<li>
+<a href="https://lesc.dinfo.unifi.it/staff/bertazzini/" target="_blank">G. Bertazzini</a>, <a href="https://lesc.dinfo.unifi.it/staff/albisani/" target="_blank">C. Albisani</a>, <a href="https://lesc.dinfo.unifi.it/staff/baracchi/" target="_blank">D. Baracchi</a>, <a href="https://lesc.dinfo.unifi.it/staff/shullani/" target="_blank">D. Shullani</a>, and <i>R. Verdecchia</i><br><b>The Hidden Cost of an Image: Quantifying the Energy Consumption of AI Image Generation</b><br>
+<i>Engineering Applications of Artificial Intelligence (EAAI)</i>,
+2026.
+<br />
+    [<a href="javascript:toggleButton('bertazzini2026hidden','abstract')">Abstract</a>]
+    [<a href="javascript:toggleButton('bertazzini2026hidden','bibtex')">BibTeX</a>]
+    <a href="https://robertoverdecchia.github.io/papers/arXiv_2025.pdf" target="_blank">[PDF]</a>
+
+<div id="bertazzini2026hidden-bibtex" class="bibtex noshow" style="display: none;">
+<pre>
+@article{bertazzini2026hidden,
+  title={The Hidden Cost of an Image: Quantifying the Energy Consumption of AI Image Generation},
+  author={Bertazzini, Giulia and Albisani, Chiara and Baracchi, Daniele and Shullani, Dasara and Verdecchia, Roberto},
+  journal={Engineering Applications of Artificial Intelligence},
+  year={2026}
+}
+</pre>
+</div>
+<div id="bertazzini2026hidden-abstract" class="abstract" style="display: none;">
+With the growing adoption of Artificial Intelligence (AI) image generation, in conjunc-
+tion with the ever-increasing environmental resources demanded by AI, we are urged to answer a fundamental question: What is the environmental impact hidden behind each image we generate? In this research, we present a comprehensive empirical experiment designed to assess the energy consumption of AI image generation through diffusion models. Our experiment compares 17 state-of-the-art image generative models by considering multiple factors that could affect their energy consumption, such as model quantization, image resolution, and prompt length. Additionally, we consider established image quality metrics to study potential trade-offs between energy consumption and generated image quality. Results show that image generation models vary drastically in terms of the energy they consume, with up to a 46x difference. Image resolution affects energy consumption inconsistently: increasing resolution fourfold (from 512×512 to 1024×1024) yields energy increases ranging from 1.3x to 4.8x across models. U-Net-based models tend to consume less than Transformer-based one. Model quantization instead results to deteriorate the energy efficiency of most models, while prompt length and content have no statistically significant impact. Results show that, albeit not common, an effective trade-off between image generation energy consumption and its quality is possible, with few of the models producing the highest quality images also being among the most energy efficient ones.</div>
+</li>
+<br> 
+
+
+
 <!-- Item: verdecchia2026empirical -->
 <li>
 <i>R. Verdecchia</i>, <a href="https://xjreb.github.io/" target="_blank">J. Bogner</a><br><b>Empirical Software Engineering in Practice:
@@ -583,31 +611,6 @@ While we cannot promise to act on every idea, we aim to shape this column around
 </div>
 <div id="cruciani2025choosing-abstract" class="abstract" style="display: none;">
 Artificial Intelligence is increasingly pervasive across domains, with ever more complex models delivering impressive predictive performance. This fast technological advancement however comes at a concerning environmental cost, with state-of-the-art models - particularly deep neural networks and large language models - requiring substantial computational resources and energy. In this work, we present the intuition of Green AI dynamic model selection, an approach based on dynamic model selection that aims at reducing the environmental footprint of AI by selecting the most sustainable model while minimizing potential accuracy loss. Specifically, our approach takes into account the inference task, the environmental sustainability of available models, and accuracy requirements to dynamically choose the most suitable model. Our approach presents two different methods, namely Green AI dynamic model cascading and Green AI dynamic model routing. We demonstrate the effectiveness of our approach via a proof of concept empirical example based on a real-world dataset. Our results show that Green AI dynamic model selection can achieve substantial energy savings (up to ≈25%) while substantially retaining the accuracy of the most energy greedy solution (up to ≈95%). As conclusion, our preliminary findings highlight the potential that hybrid, adaptive model selection strategies withhold to mitigate the energy demands of modern AI systems without significantly compromising accuracy requirements.</div>
-</li>
-<br> 
-
-<!-- Item: bertazzini2025hidden -->
-<li>
-<a href="https://lesc.dinfo.unifi.it/staff/bertazzini/" target="_blank">G. Bertazzini</a>, <a href="https://lesc.dinfo.unifi.it/staff/albisani/" target="_blank">C. Albisani</a>, <a href="https://lesc.dinfo.unifi.it/staff/baracchi/" target="_blank">D. Baracchi</a>, <a href="https://lesc.dinfo.unifi.it/staff/shullani/" target="_blank">D. Shullani</a>, and <i>R. Verdecchia</i><br><b>The Hidden Cost of an Image: Quantifying the Energy Consumption of AI Image Generation</b><br>
-<i>arXiv preprint</i>,
-2025.
-<br />
-    [<a href="javascript:toggleButton('bertazzini2025hidden','abstract')">Abstract</a>]
-    [<a href="javascript:toggleButton('bertazzini2025hidden','bibtex')">BibTeX</a>]
-    <a href="https://robertoverdecchia.github.io/papers/arXiv_2025.pdf" target="_blank">[PDF]</a>
-
-<div id="bertazzini2025hidden-bibtex" class="bibtex noshow" style="display: none;">
-<pre>
-@article{bertazzini2025hidden,
-  title={The Hidden Cost of an Image: Quantifying the Energy Consumption of AI Image Generation},
-  author={Bertazzini, Giulia and Albisani, Chiara and Baracchi, Daniele and Shullani, Dasara and Verdecchia, Roberto},
-  journal={arXiv preprint arXiv:2506.17016},
-  year={2025}
-}
-</pre>
-</div>
-<div id="bertazzini2025hidden-abstract" class="abstract" style="display: none;">
-With the growing adoption of AI image generation, in conjunction with the everincreasing environmental resources demanded by AI, we are urged to answer a fundamental question: What is the environmental impact hidden behind each image we generate? In this research, we present a comprehensive empirical experiment designed to assess the energy consumption of AI image generation. Our experiment compares 17 state-of-the-art image generation models by considering multiple factors that could affect their energy consumption, such as model quantization, image resolution, and prompt length. Additionally, we consider established image quality metrics to study potential trade-offs between energy consumption and generated image quality. Results show that image generation models vary drastically in terms of the energy they consume, with up to a 46x difference. Image resolution affects energy consumption inconsistently, ranging from a 1.3x to 4.7x increase when doubling resolution. U-Net-based models tend to consume less than Transformer-based one. Model quantization instead results to deteriorate the energy efficiency of most models, while prompt length and content have no statistically significant impact. Improving image quality does not always come at the cost of a higher energy consumption, with some of the models producing the highest quality images also being among the most energy efficient ones.</div>
 </li>
 <br> 
 
