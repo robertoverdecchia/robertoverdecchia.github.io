@@ -352,7 +352,54 @@ Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="http://mademist
   })();
 </script>
 
-          
+
+
+<style>
+  .bio-photo { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+</style>
+<script>
+(function () {
+  var OLD_SCHOOL = 'https://robertoverdecchia.github.io/images/roberto-verdecchia-old-school.jpg';
+  new Image().src = OLD_SCHOOL; // preload, so the swap is instant
+
+  function toggle(img) {
+    if (img.src.indexOf('roberto-verdecchia-old-school') !== -1) {
+      img.src = img.getAttribute('data-prev-src');
+      img.style.width = '';
+      img.style.height = '';
+      img.style.objectFit = '';
+    } else {
+      img.setAttribute('data-prev-src', img.src);
+      // Freeze the current on-screen size so the outline doesn't change
+      img.style.width = img.offsetWidth + 'px';
+      img.style.height = img.offsetHeight + 'px';
+      img.style.objectFit = 'cover';
+      img.src = OLD_SCHOOL;
+    }
+  }
+
+  var photos = document.querySelectorAll('img.bio-photo');
+  for (var i = 0; i < photos.length; i++) {
+    (function (img) {
+      // Desktop
+      img.addEventListener('dblclick', function () { toggle(img); });
+
+      // Mobile: detect two taps within 350 ms
+      var lastTap = 0;
+      img.addEventListener('touchend', function (e) {
+        var now = Date.now();
+        if (now - lastTap < 350) {
+          e.preventDefault(); // no zoom, no simulated hover/click
+          toggle(img);
+          lastTap = 0;
+        } else {
+          lastTap = now;
+        }
+      });
+    })(photos[i]);
+  }
+})();
+</script>          
 
 </body>
 </html>
