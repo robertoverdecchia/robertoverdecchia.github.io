@@ -51,9 +51,22 @@
   var root = document.documentElement;
   var saved = null;
   try { saved = localStorage.getItem('theme'); } catch (e) {}
-  var hour = new Date().getHours();
-  var night = hour >= 19 || hour < 7;
-  if (saved === 'dark' || (!saved && night)) { root.className += ' dark-theme'; }
+  function isNight() {
+    // The device itself is in dark mode (often switched at local sunset)
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) { return true; }
+    // Otherwise estimate sunrise and sunset from the date
+    var now = new Date();
+    var day = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+    var season = Math.cos(2 * Math.PI * (day - 172) / 365); // +1 in late June, -1 in late December
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    if (/^(Australia|Antarctica)\/|Auckland|Sao_Paulo|Argentina|Santiago|Montevideo|Johannesburg/.test(tz)) { season = -season; }
+    var sunset = 18.8 + 2.1 * season;
+    var sunrise = 6.7 - 1.1 * season;
+    var hour = now.getHours() + now.getMinutes() / 60;
+    return hour >= sunset || hour < sunrise;
+  }
+  if (saved === 'dark' || (!saved && isNight())) { root.className += ' dark-theme'; }
 
   document.addEventListener('click', function (e) {
     var el = e.target;
