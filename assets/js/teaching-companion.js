@@ -1,11 +1,11 @@
 /* Teaching page easter egg: a tiny gryphon living behind a tiny door in the bottom-right corner.
    The gryphon is a set of short looping animations in images/gryphon/
-   (idle, walk, fly, happy, wave, surprised, dizzy, sleep), cross-faded according to what it is doing.
-   Click the door to let it out. Drag and throw it, tap it, scroll the page.
-   It only moves when you make it: keyboard A / D walk, W flap upwards, S dive; or tap, drag and scroll.
-   On phones and tablets it also glides the way the device is inclined (motion sensors), like a marble on a tray.
-   Drag it back to its door (or walk it there with D) to send it home.
-   The game: five pages appear one after the other; fly or throw the gryphon into each one.
+   (idle, walk, fly, happy, wave, dizzy, sleep), cross-faded according to what it is doing.
+   Click the door to let it out. Tap it for hearts; it cannot be picked up.
+   It only moves when you steer it: keyboard A / D walk, W flap upwards, S dive.
+   On phones and tablets it glides the way the device is inclined (motion sensors), like a marble on a tray.
+   Walk or glide it to its door, or click the door again, to send it home.
+   The game: five pages appear one after the other; steer the gryphon into each one.
    After the fifth it graduates: a cap and a speech bubble with the time it took. */
 (function () {
   'use strict';
@@ -22,7 +22,7 @@
   // The animations sit next to this script's folder: <site>/images/gryphon/<name>.webp
   var me = document.currentScript && document.currentScript.src;
   var FOLDER = me ? me.replace(/assets\/js\/[^\/]*$/, 'images/gryphon/') : '/images/gryphon/';
-  var NAMES = ['idle', 'walk', 'fly', 'happy', 'wave', 'surprised', 'dizzy', 'sleep'];
+  var NAMES = ['idle', 'walk', 'fly', 'happy', 'wave', 'dizzy', 'sleep'];
   var EXT = '.webp';
   var R = SIZE / 2;
   var GRAVITY = 0.55, BOUNCE = 0.45, FRICTION = 0.90, AIR = 0.995;
@@ -42,16 +42,13 @@
     '#tc-dot:after{content:"";position:absolute;left:-12px;top:-12px;right:-14px;bottom:0}' +
     '#tc-dot:hover{opacity:.85}' +
     '#tc-dot:hover:before{transform:rotateY(-35deg);animation:none}' +
-    '#tc-dot.tc-away{pointer-events:none}' +
     '#tc-dot.tc-away:before{animation:none}' +
-    '#tc-dot.tc-open,#tc-dot.tc-home{opacity:.9;pointer-events:none}' +
-    '#tc-dot.tc-open:before,#tc-dot.tc-home:before{transform:rotateY(-78deg);animation:none}' +
-    '#tc-dot.tc-home{box-shadow:0 0 0 3px rgba(233,196,106,.35),0 0 10px 4px rgba(233,196,106,.35)}' +
+    '#tc-dot.tc-open{opacity:.9;pointer-events:none}' +
+    '#tc-dot.tc-open:before{transform:rotateY(-78deg);animation:none}' +
     '@keyframes tc-peek{0%,91%,100%{transform:rotateY(0)}94%{transform:rotateY(-30deg)}97%{transform:rotateY(0)}}' +
     '#tc-stage{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:9000;overflow:hidden}' +
     '#tc-pal{position:absolute;left:0;top:0;height:' + SIZE + 'px;margin:-' + R + 'px 0 0 -' + R + 'px;' +
-      'pointer-events:auto;cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;will-change:transform}' +
-    '#tc-pal.tc-held{cursor:grabbing}' +
+      'pointer-events:auto;cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;will-change:transform}' +
     '#tc-pal img{position:absolute;left:0;top:0;height:100%;width:auto;pointer-events:none;-webkit-user-drag:none;opacity:0;transition:opacity ' + FADE + 's linear}' +
     '#tc-pal img.tc-on{opacity:1}' +
     '.tc-page{position:absolute;left:0;top:0;width:22px;height:26px;margin:-13px 0 0 -11px;pointer-events:none;transition:opacity .25s;animation:tc-bob 1.6s ease-in-out infinite}' +
@@ -165,7 +162,6 @@
   // ---------- state ----------
   var x = 0, y = 0, vx = 0, vy = 0, angle = 0, squash = 0, size = 1, facing = 1, spin = 0;
   var awake = false, held = false, onGround = false, hiding = false, running = false;
-  var grab = { dx: 0, dy: 0, moved: 0, t: 0, lx: 0, ly: 0, lt: 0 };
   var lastScroll = window.pageYOffset || 0, lastFrame = 0, lastActive = 0;
   var dizzyUntil = 0, happyUntil = 0, waveUntil = 0, sleeping = false, nextIdle = 0, taps = [], zTimer = 0;
 
@@ -204,7 +200,6 @@
 
   // Which picture fits what it is doing right now
   function pose(t) {
-    if (held) { return 'surprised'; }
     if (t < dizzyUntil) { return 'dizzy'; }
     if (sleeping) { return 'sleep'; }
     if (t < happyUntil) { return 'happy'; }
@@ -247,46 +242,15 @@
     stage.style.display = 'none'; dot.className = '';
   }
 
-  // ---------- pointer interaction ----------
+  // ---------- tapping (it cannot be picked up) ----------
   function onDown(e) {
     if (hiding) { return; }
     e.preventDefault();
-    held = true; pal.className = 'tc-held'; dot.className = 'tc-home'; size = 1; waveUntil = 0;
-    grab.dx = x - e.clientX; grab.dy = y - e.clientY; grab.moved = 0; grab.t = now();
-    grab.lx = e.clientX; grab.ly = e.clientY; grab.lt = now();
-    vx = vy = 0;
-    try { pal.setPointerCapture(e.pointerId); } catch (err) {}
-    window.addEventListener('pointermove', onMove);
-    window.addEventListener('pointerup', onUp);
-    window.addEventListener('pointercancel', onUp);
-    touch();
-  }
-
-  function onMove(e) {
-    if (!held) { return; }
-    var t = now(), dt = Math.max(t - grab.lt, 1);
-    grab.moved += Math.abs(e.clientX - grab.lx) + Math.abs(e.clientY - grab.ly);
-    vx = clamp((e.clientX - grab.lx) / dt * 16, -28, 28);
-    vy = clamp((e.clientY - grab.ly) / dt * 16, -28, 28);
-    grab.lx = e.clientX; grab.ly = e.clientY; grab.lt = t;
-    x = clamp(e.clientX + grab.dx, R, W() - R);
-    y = clamp(e.clientY + grab.dy, R, H() - R);
-    lastActive = t;
-  }
-
-  function onUp() {
-    window.removeEventListener('pointermove', onMove);
-    window.removeEventListener('pointerup', onUp);
-    window.removeEventListener('pointercancel', onUp);
-    if (!held) { return; }
-    held = false; pal.className = ''; dot.className = 'tc-away';
     var t = now();
-    if (grab.moved >= 6 && W() - x < 60 && H() - y < 60) { vx = vy = 0; goHide(); return; }   // dropped at its door: go home
-    if (grab.moved < 6 && t - grab.t < 400) {          // a tap, not a drag
-      taps = taps.filter(function (v) { return t - v < 2500; }); taps.push(t);
-      if (taps.length >= 5) { taps = []; dizzyUntil = now() + 3000; spin = 720; vx = (Math.random() < 0.5 ? -1 : 1) * 5; vy = -7; fx('@_@', '#8a7a68'); }
-      else { happyUntil = now() + 900; vy = -(7 + Math.random() * 3); vx += Math.random() * 4 - 2; squash = 0.35; fx('\u2665'); }
-    } else if (t - grab.lt > 80) { vx = vy = 0; }       // held still before release: just drop
+    taps = taps.filter(function (v) { return t - v < 2500; }); taps.push(t);
+    if (taps.length >= 5) { taps = []; dizzyUntil = t + 3000; spin = 720; vx = (Math.random() < 0.5 ? -1 : 1) * 5; vy = -7; fx('@_@', '#8a7a68'); }
+    else { happyUntil = t + 900; vy = -(7 + Math.random() * 3); vx += Math.random() * 4 - 2; squash = 0.35; fx('\u2665'); }
+    waveUntil = 0;
     touch();
   }
 
@@ -405,7 +369,7 @@
   window.addEventListener('blur', function () { keys = {}; });
 
   // ---------- wiring ----------
-  dot.addEventListener('click', wake);
+  dot.addEventListener('click', function () { if (awake) { goHide(); } else { wake(); } });   // the door lets it out, and calls it back in
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', function () {
     if (awake) { x = clamp(x, R, W() - R); y = clamp(y, R, H() - R); start(); }
