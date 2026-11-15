@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Dark theme (active when <html> has the class "dark-theme")
+   ========================================================================== */
+html.dark-theme { color-scheme: dark; }
+
+html.dark-theme body {
+    color: #d6d6d4;
+    background-color: #1b212c
+}
+
+/* Links that are not the inline blue ones */
+html.dark-theme a { color: #e4e4e2 }
+html.dark-theme a:visited { color: #b9b9b7 }
+html.dark-theme a:hover,
+html.dark-theme a:focus { color: #fff }
+html.dark-theme .author-social,
+html.dark-theme .author-social:visited { color: #e4e4e2 }
+html.dark-theme .fa-3 { color: #e4e4e2 }
+
+/* Text selection */
+html.dark-theme ::-moz-selection { color: #fff; background-color: #3f4a5e }
+html.dark-theme ::selection { color: #fff; background-color: #3f4a5e }
+
+/* Little triangle under the header image */
+html.dark-theme .image-wrap:after { border-bottom-color: #1b212c }
+
+/* Lines and borders */
+html.dark-theme hr { border-top-color: #3b4352; border-bottom-color: #1b212c }
+html.dark-theme #index h3 { border-bottom-color: #3b4352 }
+html.dark-theme .top-navigation li { border-bottom-color: rgba(255, 255, 255, 0.12) }
+html.dark-theme .top-navigation li:last-child { border-bottom-color: transparent }
+html.dark-theme .article-wrap p>a,
+html.dark-theme .article-wrap li>a { border-bottom-color: #5d6675 }
+html.dark-theme blockquote { border-color: #3b4352; border-left-color: #6f7888 }
+html.dark-theme pre { border-color: #3b4352 }
+html.dark-theme fieldset { border-color: #3b4352 }
+html.dark-theme .article-wrap img[style*="solid black"] { border-color: #5d6675 !important }
+
+/* Mobile menu button */
+html.dark-theme .nav .navtoogle { background-color: #2c3443 }
+
+/* Boxes */
+html.dark-theme .notice,
+html.dark-theme .well { background-color: #232a37; border-color: #3b4352 }
+html.dark-theme div.bibtex { background: #232a37; border-color: #3b4352 }
+html.dark-theme figcaption,
+html.dark-theme .image-credit,
+html.dark-theme .image-credit a { color: #a5a5a3 }
+
+/* Buttons and form fields */
+html.dark-theme .btn { color: #1b212c; background-color: #e4e4e2; border-color: #e4e4e2 }
+html.dark-theme .btn:visited { color: #1b212c }
+html.dark-theme .btn:hover { color: #e4e4e2; background-color: #1b212c }
+html.dark-theme label,
+html.dark-theme form legend { color: #d6d6d4 }
+html.dark-theme form legend { border-bottom-color: #3b4352 }
+html.dark-theme input,
+html.dark-theme textarea,
+html.dark-theme select { color: #d6d6d4; background-color: #232a37; border-color: #3b4352 }
+
+/* Emoji silhouettes (the grey trophies) */
+html.dark-theme mark,
+html.dark-theme .dark_emoji { text-shadow: 0 0 0 #c4c4c2 }
+
+/* The theme button itself */
+#theme-toggle { cursor: pointer }
+#theme-toggle .fa-sun-o { display: none }
+html.dark-theme #theme-toggle .fa-moon-o { display: none }
+html.dark-theme #theme-toggle .fa-sun-o { display: inline-block }
+
+/* Softer blue for the inline-coloured links, slightly brighter body text */
+html.dark-theme body { color: #e3e5e8 }
+html.dark-theme font[color="1DA1F2" i],
+html.dark-theme font[color="#1DA1F2" i] { color: #9cc3e0 }
+html.dark-theme a[style*="1DA1F2" i] { color: #9cc3e0 !important }
+
+/* Word cloud on the Research page: white text on the dark background */
+html.dark-theme img[src$="wordcloud.png"] {
+    -webkit-filter: invert(1) brightness(0.9);
+    filter: invert(1) brightness(0.9);
+    mix-blend-mode: screen
+}
+
+/* Hidden image at the bottom of the publications page: white instead of black */
+html.dark-theme .hiddenimage img {
+    -webkit-filter: invert(1);
+    filter: invert(1)
+}
