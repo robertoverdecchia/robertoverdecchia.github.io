@@ -3,9 +3,10 @@
    (idle, walk, fly, happy, wave, surprised, dizzy, sleep), cross-faded according to what it is doing.
    Click the door to let it out. Drag and throw it, tap it, scroll the page.
    It only moves when you make it: keyboard A / D walk, W flap upwards, S dive; or tap, drag and scroll.
+   On phones and tablets it also glides the way the device is inclined (motion sensors), like a marble on a tray.
    Drag it back to its door (or walk it there with D) to send it home.
    The game: five pages appear one after the other; fly or throw the gryphon into each one.
-   After the fifth it graduates: a cap and a "Congratz!". */
+   After the fifth it graduates: a cap and a speech bubble with the time it took. */
 (function () {
   'use strict';
   if (window.__teachingCompanion) { return; }
@@ -15,8 +16,9 @@
   var FACES_LEFT = true;         // which way the gryphon in the pictures looks; it is mirrored when it moves the other way
   var RUN_SPEED = 3.2;           // how fast it moves when steered with A / D
   var FADE = 0.13;               // seconds of cross-fade between two animations
+  var TILT_DEAD = 6, TILT_FULL = 28;   // degrees of inclination that are ignored / that give full speed
   var PAGES_TO_WIN = 5;          // how many pages it has to collect
-  var PAGE_STAYS = 7000;         // a page moves somewhere else after this many milliseconds
+  var PAGE_STAYS = 4500;         // a page moves somewhere else after this many milliseconds
   // The animations sit next to this script's folder: <site>/images/gryphon/<name>.webp
   var me = document.currentScript && document.currentScript.src;
   var FOLDER = me ? me.replace(/assets\/js\/[^\/]*$/, 'images/gryphon/') : '/images/gryphon/';
@@ -59,7 +61,7 @@
     '.tc-hat{position:absolute;left:14%;top:-17%;width:46%;height:32%;transform:rotate(-13deg);pointer-events:none;animation:tc-pop .4s ease-out}' +
     '@keyframes tc-pop{0%{transform:rotate(-13deg) translateY(-30px);opacity:0}100%{transform:rotate(-13deg);opacity:1}}' +
     '.tc-bubble{position:absolute;left:0;top:0;padding:5px 10px;border-radius:12px;background:#fff;color:#2b1d16;border:2px solid #4b2e1a;' +
-      'font:bold 13px/1.2 sans-serif;white-space:nowrap;pointer-events:none;animation:tc-pop2 .3s ease-out}' +
+      'font:bold 13px/1.3 sans-serif;white-space:nowrap;text-align:center;pointer-events:none;animation:tc-pop2 .3s ease-out}' +
     '.tc-bubble:after{content:"";position:absolute;left:50%;top:100%;margin-left:-6px;border:6px solid transparent;border-top-color:#4b2e1a}' +
     '@keyframes tc-pop2{0%{opacity:0}100%{opacity:1}}' +
     '.tc-fx{position:absolute;left:0;top:0;font:14px/1 sans-serif;pointer-events:none;animation:tc-rise 1.1s ease-out forwards}' +
@@ -73,7 +75,7 @@
   document.body.appendChild(dot);
 
   // ---------- the companion ----------
-  var stage, pal, pics = [], front = 0, shown = '', sprites = {}, keys = {};
+  var stage, pal, pics = [], front = 0, shown = '', sprites = {}, keys = {}, steering = 0;
 
   // ---------- the game: pages and the graduation cap ----------
   var PAGE_SVG = '<svg viewBox="0 0 20 24" aria-hidden="true"><path d="M2 1h11l5 5v17H2z" fill="#fffdf5" stroke="#4b2e1a" stroke-width="1.6" stroke-linejoin="round"/>' +
@@ -81,6 +83,7 @@
   var HAT_SVG = '<svg viewBox="0 0 32 22" aria-hidden="true"><path d="M8 11v5c4 3 12 3 16 0v-5l-8 3z" fill="#3a3a44" stroke="#111" stroke-width="1.2" stroke-linejoin="round"/>' +
     '<path d="M16 2 31 8 16 14 1 8z" fill="#2b2b33" stroke="#111" stroke-width="1.2" stroke-linejoin="round"/><path d="M27 9v8" stroke="#e9c46a" stroke-width="1.4"/><circle cx="27" cy="18.5" r="1.8" fill="#e9c46a"/></svg>';
   var caught = 0, won = false, page = null, pageX = 0, pageY = 0, pageZone = -1, pageTimer = 0, bubble = null, bubbleUntil = 0;
+  var playedMs = 0, outSince = 0;                        // time the gryphon has spent outside its door
 
   function placePage() {                                 // somewhere else every time: the window is split in six zones
     var zone, tries = 0;
@@ -123,9 +126,40 @@
   }
 
   function win(t) {
-    won = true; happyUntil = t + 4000; bubbleUntil = t + 4500;
+    won = true; happyUntil = t + 4000; bubbleUntil = t + 6000;
     var hat = document.createElement('div'); hat.className = 'tc-hat'; hat.innerHTML = HAT_SVG; pal.appendChild(hat);
-    bubble = document.createElement('div'); bubble.className = 'tc-bubble'; bubble.textContent = 'Congratz!'; stage.appendChild(bubble);
+    // how long it took, from the door opening to the last page (only the time spent outside the door counts)
+    var secs = (playedMs + (now() - outSince)) / 1000, m = Math.floor(secs / 60), sec = secs - m * 60;
+    var took = m ? m + ':' + (sec < 10 ? '0' : '') + sec.toFixed(1) : sec.toFixed(1) + ' s';
+    bubble = document.createElement('div'); bubble.className = 'tc-bubble';
+    bubble.appendChild(document.createTextNode(took + ','));
+    bubble.appendChild(document.createElement('br'));
+    bubble.appendChild(document.createTextNode('congratz!'));
+    stage.appendChild(bubble);
+  }
+
+  // ---------- gliding with the phone's inclination ----------
+  var tilt = { x: 0, y: 0, base: null, on: false };
+  function curve(deg) {                                  // dead zone, then a smooth ramp up to full speed
+    var a = Math.abs(deg); if (a < TILT_DEAD) { return 0; }
+    return (deg < 0 ? -1 : 1) * Math.min(1, (a - TILT_DEAD) / (TILT_FULL - TILT_DEAD));
+  }
+  function onTilt(e) {
+    if (e.beta === null || e.gamma === null) { return; }
+    var lr = e.gamma, fb = e.beta;                       // left-right and front-back inclination, in degrees
+    var turn = (screen.orientation && screen.orientation.angle) || window.orientation || 0;
+    if (turn === 90) { var q = lr; lr = fb; fb = -q; } else if (turn === 270 || turn === -90) { var q2 = lr; lr = -fb; fb = q2; }
+    if (tilt.base === null) { tilt.base = fb; }          // however the phone is held when the gryphon comes out counts as level
+    tilt.x = curve(lr); tilt.y = curve(fb - tilt.base);
+    if (awake && !running && (tilt.x || tilt.y)) { start(); }
+  }
+  function enableTilt() {                                // called from the tap on the door, which iOS needs for its permission prompt
+    tilt.base = null;
+    if (tilt.on || !window.DeviceOrientationEvent || !(('ontouchstart' in window) || navigator.maxTouchPoints > 0)) { return; }
+    var listen = function () { tilt.on = true; window.addEventListener('deviceorientation', onTilt); };
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      DeviceOrientationEvent.requestPermission().then(function (r) { if (r === 'granted') { listen(); } }).catch(function () {});
+    } else { listen(); }
   }
 
   // ---------- state ----------
@@ -175,7 +209,7 @@
     if (sleeping) { return 'sleep'; }
     if (t < happyUntil) { return 'happy'; }
     if (!onGround) { return 'fly'; }
-    if ((keys.a || keys.d) && !hiding) { return 'walk'; }
+    if (Math.abs(steering) > 0.15 && !hiding) { return 'walk'; }
     if (t < waveUntil) { return 'wave'; }
     return 'idle';
   }
@@ -193,6 +227,8 @@
   // ---------- waking up and hiding ----------
   function wake() {
     if (awake) { return; }
+    outSince = now();
+    enableTilt();
     if (!stage) { build(); }
     awake = true; hiding = false; sleeping = false;
     stage.style.display = ''; dot.className = 'tc-open';
@@ -206,6 +242,7 @@
   function goHide() { if (awake && !hiding) { hiding = true; held = false; sleeping = false; waveUntil = 0; keys = {}; dropPage(); pal.className = ''; dot.className = 'tc-open'; start(); } }
 
   function finishHide() {
+    if (!won) { playedMs += now() - outSince; }
     awake = false; hiding = false; running = false;
     stage.style.display = 'none'; dot.className = '';
   }
@@ -283,20 +320,23 @@
       }
     } else if (size < 1) { size = Math.min(1, size + (1.02 - size) * 0.14 * k); }
 
-    var steer = (keys.d ? 1 : 0) - (keys.a ? 1 : 0);
-    if (!held && !hiding && onGround && keys.d && x > W() - R - 36) { goHide(); steer = 0; }   // walked up to its door: go home
+    // steering comes from the keyboard or from how the phone is inclined
+    var steer = clamp((keys.d ? 1 : 0) - (keys.a ? 1 : 0) + tilt.x, -1, 1);
+    var up = keys.w ? 1 : Math.max(0, -tilt.y), down = keys.s ? 1 : Math.max(0, tilt.y);
+    if (!held && !hiding && onGround && steer > 0.3 && x > W() - R - 36) { goHide(); steer = 0; }   // walked up to its door: go home
+    steering = hiding ? 0 : steer;
     // a page is caught when the gryphon gets to it by itself (flying, walking or thrown), not while it is carried
     if (page && !held && !hiding && page.style.opacity !== '0' && Math.abs(pageX - x) < R + 6 && Math.abs(pageY - y) < R + 8) { catchPage(t); }
-    if (!held && !hiding && (steer || keys.w || keys.s)) {   // keyboard: A / D move, W flaps upwards, S dives
+    if (!held && !hiding && (steer || up || down)) {
       lastActive = t; waveUntil = 0;
       if (sleeping) { sleeping = false; fx('!', '#e0a030'); }
-      if (keys.w) { vy = Math.max(vy - 1.25 * k, -7.5); }
-      if (keys.s && !onGround) { vy = Math.min(vy + 1.0 * k, 13); }
+      if (up) { vy = Math.max(vy - 1.25 * up * k, -7.5); }
+      if (down && !onGround) { vy = Math.min(vy + 1.0 * down * k, 13); }
       if (steer) { vx += (steer * RUN_SPEED - vx) * 0.25 * k; }
     }
     if (!held) {
       vy += GRAVITY * k; vx *= Math.pow(AIR, k);
-      if (vy > FLUTTER && !keys.s) { vy += (FLUTTER - vy) * 0.25 * k; }   // flapping slows the fall
+      if (vy > FLUTTER && down < 0.3) { vy += (FLUTTER - vy) * 0.25 * k; }   // flapping slows the fall
       x += vx * k; y += vy * k;
       if (x < R) { x = R; vx = Math.abs(vx) * BOUNCE; }
       if (x > W() - R) { x = W() - R; vx = -Math.abs(vx) * BOUNCE; }
@@ -310,15 +350,15 @@
       } else { onGround = false; }
       if (onGround && Math.abs(vx) < 0.05) { vx = 0; }
       if (Math.abs(vx) > 0.4) { facing = vx < 0 ? -1 : 1; }
-      var tilt = onGround ? 0 : clamp(vx * 3, -25, 25);    // it leans into the direction it flies
-      angle += (tilt - angle) * 0.2 * k;
+      var lean = onGround ? 0 : clamp(vx * 3, -25, 25);    // it leans into the direction it flies
+      angle += (lean - angle) * 0.2 * k;
     } else { angle += (Math.sin(t / 90) * 8 - angle) * 0.3 * k; }   // it wriggles while held
     if (spin > 0) { spin = Math.max(0, spin - 22 * k); }
 
     squash *= Math.pow(0.80, k);
 
     // left alone it stays where it is: now and then it waves a wing, and eventually it naps
-    var idle = t - lastActive, busy = t < waveUntil || t < dizzyUntil || steer || keys.w;
+    var idle = t - lastActive, busy = t < waveUntil || t < dizzyUntil || steer || up;
     if (!held && !hiding && onGround && !busy && !calm) {
       if (!sleeping && idle > 45000) { sleeping = true; zTimer = 0; }
       if (!sleeping && t > nextIdle) { waveUntil = t + 1700; nextIdle = t + 14000 + Math.random() * 14000; }
@@ -328,7 +368,7 @@
     draw(t);
 
     var atRest = onGround && vx === 0 && vy === 0 && squash < 0.01 && size === 1 && Math.abs(angle) < 0.3 && spin === 0 && !held && !hiding;
-    if (!atRest || steer || keys.w || t < dizzyUntil || t < happyUntil || t < waveUntil || t < bubbleUntil) { requestAnimationFrame(frame); }
+    if (!atRest || steer || up || t < dizzyUntil || t < happyUntil || t < waveUntil || t < bubbleUntil) { requestAnimationFrame(frame); }
     else {                                              // nothing moves: stop the loop and just check back later
       running = false;
       setTimeout(start, sleeping ? 2600 : Math.max(120, nextIdle - t));
@@ -343,7 +383,7 @@
     show(pose(t));
     if (bubble) {
       if (t > bubbleUntil) { bubble.parentNode.removeChild(bubble); bubble = null; }
-      else { bubble.style.transform = 'translate(' + clamp(x - 40, 4, W() - 96).toFixed(0) + 'px,' + Math.max(4, y - R - 42).toFixed(0) + 'px)'; }
+      else { bubble.style.transform = 'translate(' + clamp(x - 40, 4, W() - 96).toFixed(0) + 'px,' + Math.max(4, y - R - 58).toFixed(0) + 'px)'; }
     }
     var mirror = (facing < 0) === FACES_LEFT ? 1 : -1;   // look where it is going
     pal.style.transform = 'translate(' + x.toFixed(1) + 'px,' + (y + (1 - sy) * R).toFixed(1) + 'px) rotate(' + (angle + spin).toFixed(1) + 'deg) scale(' + (sx * mirror).toFixed(3) + ',' + sy.toFixed(3) + ')';
