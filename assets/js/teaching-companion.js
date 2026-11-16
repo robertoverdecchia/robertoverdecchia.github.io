@@ -4,7 +4,7 @@
    Click the door to let it out. Tap it for hearts; it cannot be picked up.
    It only moves when you steer it: keyboard A / D walk, W flap upwards, S dive.
    On phones and tablets it glides the way the device is inclined (motion sensors), like a marble on a tray.
-   Walk or glide it to its door, or click the door again, to send it home.
+   Click the door again to send it home; that also resets the game for a new round.
    The game: five pages appear one after the other; steer the gryphon into each one.
    After the fifth it graduates: a cap and a speech bubble with the time it took. */
 (function () {
@@ -80,7 +80,7 @@
   var HAT_SVG = '<svg viewBox="0 0 32 22" aria-hidden="true"><path d="M8 11v5c4 3 12 3 16 0v-5l-8 3z" fill="#3a3a44" stroke="#111" stroke-width="1.2" stroke-linejoin="round"/>' +
     '<path d="M16 2 31 8 16 14 1 8z" fill="#2b2b33" stroke="#111" stroke-width="1.2" stroke-linejoin="round"/><path d="M27 9v8" stroke="#e9c46a" stroke-width="1.4"/><circle cx="27" cy="18.5" r="1.8" fill="#e9c46a"/></svg>';
   var caught = 0, won = false, page = null, pageX = 0, pageY = 0, pageZone = -1, pageTimer = 0, bubble = null, bubbleUntil = 0;
-  var playedMs = 0, outSince = 0;                        // time the gryphon has spent outside its door
+  var outSince = 0;                                      // when the door was opened for this round
 
   function placePage() {                                 // somewhere else every time: the window is split in six zones
     var zone, tries = 0;
@@ -125,8 +125,8 @@
   function win(t) {
     won = true; happyUntil = t + 4000; bubbleUntil = t + 6000;
     var hat = document.createElement('div'); hat.className = 'tc-hat'; hat.innerHTML = HAT_SVG; pal.appendChild(hat);
-    // how long it took, from the door opening to the last page (only the time spent outside the door counts)
-    var secs = (playedMs + (now() - outSince)) / 1000, m = Math.floor(secs / 60), sec = secs - m * 60;
+    // how long it took, from the door opening to the last page
+    var secs = (now() - outSince) / 1000, m = Math.floor(secs / 60), sec = secs - m * 60;
     var took = m ? m + ':' + (sec < 10 ? '0' : '') + sec.toFixed(1) : sec.toFixed(1) + ' s';
     bubble = document.createElement('div'); bubble.className = 'tc-bubble';
     bubble.appendChild(document.createTextNode(took + ','));
@@ -237,7 +237,10 @@
   function goHide() { if (awake && !hiding) { hiding = true; held = false; sleeping = false; waveUntil = 0; keys = {}; dropPage(); pal.className = ''; dot.className = 'tc-open'; start(); } }
 
   function finishHide() {
-    if (!won) { playedMs += now() - outSince; }
+    // back behind its door: the game starts over, so the next time it comes out is a new round
+    caught = 0; won = false; bubbleUntil = 0;
+    if (bubble && bubble.parentNode) { bubble.parentNode.removeChild(bubble); } bubble = null;
+    var hat = pal.querySelector('.tc-hat'); if (hat) { pal.removeChild(hat); }
     awake = false; hiding = false; running = false;
     stage.style.display = 'none'; dot.className = '';
   }
@@ -287,7 +290,6 @@
     // steering comes from the keyboard or from how the phone is inclined
     var steer = clamp((keys.d ? 1 : 0) - (keys.a ? 1 : 0) + tilt.x, -1, 1);
     var up = keys.w ? 1 : Math.max(0, -tilt.y), down = keys.s ? 1 : Math.max(0, tilt.y);
-    if (!held && !hiding && onGround && steer > 0.3 && x > W() - R - 36) { goHide(); steer = 0; }   // walked up to its door: go home
     steering = hiding ? 0 : steer;
     // a page is caught when the gryphon gets to it by itself (flying, walking or thrown), not while it is carried
     if (page && !held && !hiding && page.style.opacity !== '0' && Math.abs(pageX - x) < R + 6 && Math.abs(pageY - y) < R + 8) { catchPage(t); }
