@@ -61,6 +61,12 @@
       'font:bold 13px/1.3 sans-serif;white-space:nowrap;text-align:center;pointer-events:none;animation:tc-pop2 .3s ease-out}' +
     '.tc-bubble:after{content:"";position:absolute;left:50%;top:100%;margin-left:-6px;border:6px solid transparent;border-top-color:#4b2e1a}' +
     '@keyframes tc-pop2{0%{opacity:0}100%{opacity:1}}' +
+    '#tc-hint{position:fixed;left:50%;bottom:74px;transform:translateX(-50%);z-index:9001;padding:8px 14px;border-radius:14px;' +
+      'background:rgba(33,29,26,.92);color:#f2ebdd;font:13px/1.5 sans-serif;text-align:center;white-space:nowrap;pointer-events:none;' +
+      'box-shadow:0 2px 10px rgba(0,0,0,.3);opacity:0;transition:opacity .4s}' +
+    '#tc-hint.tc-on{opacity:1}' +
+    '#tc-hint kbd{display:inline-block;min-width:1.5em;margin:0 1px;padding:0 4px;border:1px solid #8a7a68;border-bottom-width:2px;border-radius:4px;' +
+      'background:#3a332d;color:#f2ebdd;font:bold 12px/1.5 sans-serif}' +
     '.tc-fx{position:absolute;left:0;top:0;font:14px/1 sans-serif;pointer-events:none;animation:tc-rise 1.1s ease-out forwards}' +
     '@keyframes tc-rise{0%{opacity:0;margin-top:0}20%{opacity:1}100%{opacity:0;margin-top:-34px}}';
   document.head.appendChild(css);
@@ -159,6 +165,26 @@
     } else { listen(); }
   }
 
+  // ---------- a short how-to, shown the first time the door is opened ----------
+  var hint = null, hintShown = false, hintTimer = 0;
+  function isPhone() { return !!window.DeviceOrientationEvent && (('ontouchstart' in window) || navigator.maxTouchPoints > 0); }
+  function showHint() {
+    if (hintShown) { return; }
+    hintShown = true;
+    hint = document.createElement('div'); hint.id = 'tc-hint';
+    hint.innerHTML = (isPhone() ? 'Tilt your phone to move' : 'Use <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> to move') +
+      '<br>Catch ' + PAGES_TO_WIN + ' pages!';
+    document.body.appendChild(hint);
+    setTimeout(function () { if (hint) { hint.className = 'tc-on'; } }, 30);
+    hintTimer = setTimeout(hideHint, 7000);
+  }
+  function hideHint() {
+    clearTimeout(hintTimer);
+    if (!hint) { return; }
+    var el = hint; hint = null; el.className = '';
+    setTimeout(function () { if (el.parentNode) { el.parentNode.removeChild(el); } }, 450);
+  }
+
   // ---------- state ----------
   var x = 0, y = 0, vx = 0, vy = 0, angle = 0, squash = 0, size = 1, facing = 1, spin = 0;
   var awake = false, held = false, onGround = false, hiding = false, running = false;
@@ -222,6 +248,7 @@
   // ---------- waking up and hiding ----------
   function wake() {
     if (awake) { return; }
+    showHint();
     outSince = now();
     enableTilt();
     if (!stage) { build(); }
@@ -234,7 +261,7 @@
     nextPage(3000);
   }
 
-  function goHide() { if (awake && !hiding) { hiding = true; held = false; sleeping = false; waveUntil = 0; keys = {}; dropPage(); pal.className = ''; dot.className = 'tc-open'; start(); } }
+  function goHide() { if (awake && !hiding) { hideHint(); hiding = true; held = false; sleeping = false; waveUntil = 0; keys = {}; dropPage(); pal.className = ''; dot.className = 'tc-open'; start(); } }
 
   function finishHide() {
     // back behind its door: the game starts over, so the next time it comes out is a new round
@@ -294,6 +321,7 @@
     // a page is caught when the gryphon gets to it by itself (flying, walking or thrown), not while it is carried
     if (page && !held && !hiding && page.style.opacity !== '0' && Math.abs(pageX - x) < R + 6 && Math.abs(pageY - y) < R + 8) { catchPage(t); }
     if (!held && !hiding && (steer || up || down)) {
+      if (hint && !hint.leaving) { hint.leaving = true; clearTimeout(hintTimer); hintTimer = setTimeout(hideHint, 1200); }
       lastActive = t; waveUntil = 0;
       if (sleeping) { sleeping = false; fx('!', '#e0a030'); }
       if (up) { vy = Math.max(vy - 1.25 * up * k, -7.5); }
